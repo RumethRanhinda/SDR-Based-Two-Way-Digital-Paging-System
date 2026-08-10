@@ -60,10 +60,10 @@ The repository is structured around separate `.grc` flowgraphs for testing diffe
 
 | Flowgraph File | Description |
 | :--- | :--- |
-| `[arq_tx_name].grc` | Tx flowgraph for Stop-and-Wait ARQ. Queues messages, handles sequencing, and waits for ACKs. |
-| `[arq_rx_name].grc` | Rx flowgraph for ARQ. Demodulates, filters duplicates, and automatically transmits ACKs. |
-| `[aloha_tx_name].grc` | Tx flowgraph for Pure ALOHA, demonstrating uncoordinated channel access without ACKs. |
-| `[aloha_rx_name].grc` | Rx flowgraph for the Pure ALOHA system. |
+| `SDR Implementation/device_node.grc` | Tx flowgraph for Stop-and-Wait ARQ. Queues messages, handles sequencing, and waits for ACKs. |
+| `Simulation/Single device loopback/loopback.grc` | Rx flowgraph for ARQ. Demodulates, filters duplicates, and automatically transmits ACKs. |
+| `Simulation/drafts/Multiuser/Multiuser.grc` | Tx flowgraph for Pure ALOHA, demonstrating uncoordinated channel access without ACKs. |
+| `Simulation/drafts/Priority Handler/Priority_handler.grc` | Rx flowgraph for the Pure ALOHA system. |
 
 ---
 
