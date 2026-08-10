@@ -1,0 +1,3125 @@
+options:
+  parameters:
+    author: Rumeth Samarasinghe
+    catch_exceptions: 'True'
+    category: '[GRC Hier Blocks]'
+    cmake_opt: ''
+    comment: ''
+    copyright: ''
+    description: ''
+    gen_cmake: 'On'
+    gen_linking: dynamic
+    generate_options: qt_gui
+    hier_block_src_path: '.:'
+    id: Priority_handler
+    max_nouts: '0'
+    output_language: python
+    placement: (0,0)
+    qt_qss_theme: ''
+    realtime_scheduling: ''
+    run: 'True'
+    run_command: '{python} -u {filename}'
+    run_options: prompt
+    sizing_mode: fixed
+    thread_safe_setters: ''
+    title: Lets See how this works
+    window_size: (1000,1000)
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [8, 8]
+    rotation: 0
+    state: enabled
+
+blocks:
+- name: access_key
+  id: variable
+  parameters:
+    comment: ''
+    value: '''1110000101011010111010001001001111100001010110101110100010010011'''
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1048, 624.0]
+    rotation: 0
+    state: enabled
+- name: access_key_0
+  id: variable
+  parameters:
+    comment: ''
+    value: '''1110000101011010111010001001001111100001010110101110100010010011'''
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1384, 1536.0]
+    rotation: 0
+    state: enabled
+- name: damp_fac
+  id: variable
+  parameters:
+    comment: ''
+    value: '0.707'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [488, 1376.0]
+    rotation: 0
+    state: enabled
+- name: excess_bw
+  id: variable
+  parameters:
+    comment: ''
+    value: '0.35'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [3064, 784.0]
+    rotation: 0
+    state: enabled
+- name: excess_bw_0
+  id: variable
+  parameters:
+    comment: ''
+    value: '0.35'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [3400, 1712.0]
+    rotation: 0
+    state: enabled
+- name: freq_offset
+  id: variable
+  parameters:
+    comment: ''
+    value: '0'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [3256, 544.0]
+    rotation: 0
+    state: enabled
+- name: freq_offset_0
+  id: variable
+  parameters:
+    comment: ''
+    value: '0'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [3592, 1472.0]
+    rotation: 0
+    state: enabled
+- name: hdr_format
+  id: variable
+  parameters:
+    comment: header_format_default
+    value: digital.header_format_default(access_key, 0)
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1056, 752.0]
+    rotation: 0
+    state: enabled
+- name: hdr_format_0
+  id: variable
+  parameters:
+    comment: header_format_default
+    value: digital.header_format_default(access_key, 0)
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1392, 1664.0]
+    rotation: 0
+    state: enabled
+- name: max_dev
+  id: variable
+  parameters:
+    comment: ''
+    value: '0.05'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [416, 1376.0]
+    rotation: 0
+    state: enabled
+- name: my_addr
+  id: variable
+  parameters:
+    comment: ''
+    value: '''00'''
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [272, 8.0]
+    rotation: 0
+    state: enabled
+- name: nfilts
+  id: variable
+  parameters:
+    comment: ''
+    value: '32'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [504, 1248.0]
+    rotation: 0
+    state: enabled
+- name: nfilts_0
+  id: variable
+  parameters:
+    comment: ''
+    value: '32'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [464, 384.0]
+    rotation: 0
+    state: enabled
+- name: noise_volt
+  id: variable
+  parameters:
+    comment: ''
+    value: 100e-6
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [3216, 608.0]
+    rotation: 0
+    state: enabled
+- name: noise_volt_0
+  id: variable
+  parameters:
+    comment: ''
+    value: 100e-6
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [3552, 1536.0]
+    rotation: 0
+    state: enabled
+- name: phase_bw
+  id: variable
+  parameters:
+    comment: ''
+    value: '62.8e-3'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [424, 1248.0]
+    rotation: 0
+    state: enabled
+- name: phase_bw_0
+  id: variable
+  parameters:
+    comment: ''
+    value: '62.8e-3'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [376, 384.0]
+    rotation: 0
+    state: enabled
+- name: qpsk
+  id: variable_constellation_rect
+  parameters:
+    comment: ''
+    const_points: '[0.707+0.707j, -0.707+0.707j, -0.707-0.707j, 0.707-0.707j] '
+    imag_sect: '2'
+    precision: '8'
+    real_sect: '2'
+    rot_sym: '4'
+    soft_dec_lut: None
+    sym_map: '[0, 1, 3, 2]'
+    w_imag_sect: '1'
+    w_real_sect: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [2992, 524.0]
+    rotation: 0
+    state: enabled
+- name: qpsk_0
+  id: variable_constellation_rect
+  parameters:
+    comment: ''
+    const_points: '[0.707+0.707j, -0.707+0.707j, -0.707-0.707j, 0.707-0.707j] '
+    imag_sect: '2'
+    precision: '8'
+    real_sect: '2'
+    rot_sym: '4'
+    soft_dec_lut: None
+    sym_map: '[0, 1, 3, 2]'
+    w_imag_sect: '1'
+    w_real_sect: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [3328, 1452.0]
+    rotation: 0
+    state: enabled
+- name: rrc_taps
+  id: variable
+  parameters:
+    comment: ''
+    value: firdes.root_raised_cosine(nfilts, nfilts, 1.0/float(sps), 0.35, 11*sps*nfilts)
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [424, 1312.0]
+    rotation: 0
+    state: enabled
+- name: rrc_taps_0
+  id: variable
+  parameters:
+    comment: ''
+    value: firdes.root_raised_cosine(nfilts, nfilts, 1.0/float(sps), 0.35, 11*sps*nfilts)
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [376, 448.0]
+    rotation: 0
+    state: enabled
+- name: samp_rate
+  id: variable
+  parameters:
+    comment: ''
+    value: '48000'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [184, 8.0]
+    rotation: 0
+    state: enabled
+- name: sender_addr
+  id: variable
+  parameters:
+    comment: ''
+    value: '''B1'''
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [352, 8.0]
+    rotation: 0
+    state: enabled
+- name: sps
+  id: variable
+  parameters:
+    comment: ''
+    value: '4'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [2984, 784.0]
+    rotation: 0
+    state: enabled
+- name: sps_0
+  id: variable
+  parameters:
+    comment: ''
+    value: '4'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [3320, 1712.0]
+    rotation: 0
+    state: enabled
+- name: taps
+  id: variable
+  parameters:
+    comment: "taps are basically the \nmultipath impulse response \nof your channel:\
+      \ how each\n transmitted symbol echoes \ninto the future"
+    value: '[0.6,0.4+0.2j,0.3-0.5j]'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [3216, 912.0]
+    rotation: 0
+    state: enabled
+- name: time_offset
+  id: variable
+  parameters:
+    comment: ''
+    value: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [3296, 608.0]
+    rotation: 0
+    state: enabled
+- name: time_offset_0
+  id: variable
+  parameters:
+    comment: ''
+    value: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [3632, 1536.0]
+    rotation: 0
+    state: enabled
+- name: variable_adaptive_algorithm_0
+  id: variable_adaptive_algorithm
+  parameters:
+    comment: ''
+    cons: qpsk
+    delta: '10.0'
+    ffactor: '0.99'
+    modulus: '4'
+    step_size: '.0001'
+    type: cma
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [744, 960.0]
+    rotation: 0
+    state: enabled
+- name: variable_adaptive_algorithm_0_0
+  id: variable_adaptive_algorithm
+  parameters:
+    comment: ''
+    cons: qpsk
+    delta: '10.0'
+    ffactor: '0.99'
+    modulus: '4'
+    step_size: '.0001'
+    type: cma
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [696, 96.0]
+    rotation: 0
+    state: enabled
+- name: blocks_message_debug_0
+  id: blocks_message_debug
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    en_uvec: 'True'
+    log_level: info
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [2360, 552.0]
+    rotation: 0
+    state: disabled
+- name: blocks_message_debug_0_0
+  id: blocks_message_debug
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    en_uvec: 'True'
+    log_level: info
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [2696, 1472.0]
+    rotation: 0
+    state: disabled
+- name: blocks_message_debug_1
+  id: blocks_message_debug
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    en_uvec: 'True'
+    log_level: info
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [640, 536.0]
+    rotation: 0
+    state: disabled
+- name: blocks_message_debug_1_0
+  id: blocks_message_debug
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    en_uvec: 'True'
+    log_level: info
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [976, 1456.0]
+    rotation: 0
+    state: disabled
+- name: blocks_message_debug_2
+  id: blocks_message_debug
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    en_uvec: 'True'
+    log_level: info
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [2032, 552.0]
+    rotation: 0
+    state: disabled
+- name: blocks_message_debug_2_0
+  id: blocks_message_debug
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    en_uvec: 'True'
+    log_level: info
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [2368, 1472.0]
+    rotation: 0
+    state: disabled
+- name: blocks_message_debug_3
+  id: blocks_message_debug
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    en_uvec: 'True'
+    log_level: info
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [3048, 896.0]
+    rotation: 0
+    state: enabled
+- name: blocks_pack_k_bits_bb_0
+  id: blocks_pack_k_bits_bb
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    k: '8'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1888, 1128.0]
+    rotation: 0
+    state: enabled
+- name: blocks_pack_k_bits_bb_0_0
+  id: blocks_pack_k_bits_bb
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    k: '8'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1840, 264.0]
+    rotation: 0
+    state: enabled
+- name: blocks_repack_bits_bb_0
+  id: blocks_repack_bits_bb
+  parameters:
+    affinity: ''
+    alias: ''
+    align_output: 'False'
+    comment: ''
+    endianness: gr.GR_MSB_FIRST
+    k: '8'
+    l: '1'
+    len_tag_key: '"packet_len"'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [2616, 704.0]
+    rotation: 0
+    state: enabled
+- name: blocks_repack_bits_bb_0_0
+  id: blocks_repack_bits_bb
+  parameters:
+    affinity: ''
+    alias: ''
+    align_output: 'False'
+    comment: ''
+    endianness: gr.GR_MSB_FIRST
+    k: '8'
+    l: '1'
+    len_tag_key: '"packet_len"'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [2952, 1632.0]
+    rotation: 0
+    state: enabled
+- name: blocks_repack_bits_bb_1_0_0
+  id: blocks_repack_bits_bb
+  parameters:
+    affinity: ''
+    alias: ''
+    align_output: 'False'
+    comment: MSB
+    endianness: gr.GR_MSB_FIRST
+    k: '1'
+    l: '8'
+    len_tag_key: '"packet_len"'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [2224, 1120.0]
+    rotation: 0
+    state: true
+- name: blocks_repack_bits_bb_1_0_0_0
+  id: blocks_repack_bits_bb
+  parameters:
+    affinity: ''
+    alias: ''
+    align_output: 'False'
+    comment: MSB
+    endianness: gr.GR_MSB_FIRST
+    k: '1'
+    l: '8'
+    len_tag_key: '"packet_len"'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [2176, 256.0]
+    rotation: 0
+    state: true
+- name: blocks_tagged_stream_mux_0
+  id: blocks_tagged_stream_mux
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    lengthtagname: packet_len
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    ninputs: '2'
+    tag_preserve_head_pos: '0'
+    type: byte
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1600, 704.0]
+    rotation: 0
+    state: enabled
+- name: blocks_tagged_stream_mux_0_0
+  id: blocks_tagged_stream_mux
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    lengthtagname: packet_len
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    ninputs: '2'
+    tag_preserve_head_pos: '0'
+    type: byte
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1936, 1632.0]
+    rotation: 0
+    state: enabled
+- name: blocks_throttle2_0
+  id: blocks_throttle2
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    ignoretag: 'True'
+    limit: auto
+    maximum: '0.1'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    samples_per_second: samp_rate
+    type: byte
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [2816, 704.0]
+    rotation: 0
+    state: enabled
+- name: blocks_throttle2_0_0
+  id: blocks_throttle2
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    ignoretag: 'True'
+    limit: auto
+    maximum: '0.1'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    samples_per_second: samp_rate
+    type: byte
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [3152, 1632.0]
+    rotation: 0
+    state: enabled
+- name: blocks_uchar_to_float_0
+  id: blocks_uchar_to_float
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [2008, 1360.0]
+    rotation: 0
+    state: enabled
+- name: blocks_uchar_to_float_0_0
+  id: blocks_uchar_to_float
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1960, 496.0]
+    rotation: 0
+    state: enabled
+- name: blocks_unpack_k_bits_bb_0
+  id: blocks_unpack_k_bits_bb
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    k: '2'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1768, 1128.0]
+    rotation: 0
+    state: enabled
+- name: blocks_unpack_k_bits_bb_0_0
+  id: blocks_unpack_k_bits_bb
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    k: '2'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1720, 264.0]
+    rotation: 0
+    state: enabled
+- name: channels_channel_model_0_1
+  id: channels_channel_model
+  parameters:
+    affinity: ''
+    alias: ''
+    block_tags: 'False'
+    comment: "Simulated channel\nBlock tag propogation \nset to off\nbecause realistically\n\
+      over air transmission \ndoesnt preserve metadata"
+    epsilon: time_offset
+    freq_offset: freq_offset
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    noise_voltage: noise_volt
+    seed: '0'
+    taps: taps
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [3216, 672.0]
+    rotation: 0
+    state: enabled
+- name: channels_channel_model_0_1_0
+  id: channels_channel_model
+  parameters:
+    affinity: ''
+    alias: ''
+    block_tags: 'False'
+    comment: "Simulated channel\nBlock tag propogation \nset to off\nbecause realistically\n\
+      over air transmission \ndoesnt preserve metadata"
+    epsilon: time_offset
+    freq_offset: freq_offset
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    noise_voltage: noise_volt
+    seed: '0'
+    taps: taps
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [3552, 1600.0]
+    rotation: 0
+    state: enabled
+- name: digital_constellation_decoder_cb_0
+  id: digital_constellation_decoder_cb
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    constellation: qpsk
+    maxoutbuf: '0'
+    minoutbuf: '0'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1296, 1128.0]
+    rotation: 0
+    state: enabled
+- name: digital_constellation_decoder_cb_0_0
+  id: digital_constellation_decoder_cb
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    constellation: qpsk
+    maxoutbuf: '0'
+    minoutbuf: '0'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1248, 264.0]
+    rotation: 0
+    state: enabled
+- name: digital_constellation_modulator_0
+  id: digital_constellation_modulator
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    constellation: qpsk
+    differential: 'True'
+    excess_bw: excess_bw
+    log: 'False'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    samples_per_symbol: sps
+    truncate: 'False'
+    verbose: 'False'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [2984, 688.0]
+    rotation: 0
+    state: enabled
+- name: digital_constellation_modulator_0_0
+  id: digital_constellation_modulator
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    constellation: qpsk
+    differential: 'True'
+    excess_bw: excess_bw
+    log: 'False'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    samples_per_symbol: sps
+    truncate: 'False'
+    verbose: 'False'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [3320, 1616.0]
+    rotation: 0
+    state: enabled
+- name: digital_correlate_access_code_xx_ts_0
+  id: digital_correlate_access_code_xx_ts
+  parameters:
+    access_code: '"1110000101011010111010001001001111100001010110101110100010010011"'
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    tagname: packet_len
+    threshold: '2'
+    type: byte
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1992, 1112.0]
+    rotation: 0
+    state: enabled
+- name: digital_correlate_access_code_xx_ts_0_0
+  id: digital_correlate_access_code_xx_ts
+  parameters:
+    access_code: '"1110000101011010111010001001001111100001010110101110100010010011"'
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    tagname: packet_len
+    threshold: '2'
+    type: byte
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1944, 248.0]
+    rotation: 0
+    state: enabled
+- name: digital_costas_loop_cc_0
+  id: digital_costas_loop_cc
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    order: '4'
+    use_snr: 'False'
+    w: phase_bw
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1016, 1056.0]
+    rotation: 0
+    state: enabled
+- name: digital_costas_loop_cc_0_0
+  id: digital_costas_loop_cc
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    order: '4'
+    use_snr: 'False'
+    w: phase_bw
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [968, 192.0]
+    rotation: 0
+    state: enabled
+- name: digital_crc_append_0
+  id: digital_crc_append
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    final_xor: '0xFFFFFFFF'
+    initial_value: '0xFFFFFFFF'
+    input_reflected: 'True'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    num_bits: '32'
+    poly: '0x4C11DB7'
+    result_reflected: 'True'
+    skip_header_bytes: '0'
+    swap_endianness: 'False'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [848, 696.0]
+    rotation: 0
+    state: enabled
+- name: digital_crc_append_0_0
+  id: digital_crc_append
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    final_xor: '0xFFFFFFFF'
+    initial_value: '0xFFFFFFFF'
+    input_reflected: 'True'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    num_bits: '32'
+    poly: '0x4C11DB7'
+    result_reflected: 'True'
+    skip_header_bytes: '0'
+    swap_endianness: 'False'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1160, 1608.0]
+    rotation: 0
+    state: enabled
+- name: digital_crc_check_0
+  id: digital_crc_check
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    discard_crc: 'False'
+    final_xor: '0xFFFFFFFF'
+    initial_value: '0xFFFFFFFF'
+    input_reflected: 'True'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    num_bits: '32'
+    poly: '0x4C11DB7'
+    result_reflected: 'True'
+    skip_header_bytes: '0'
+    swap_endianness: 'False'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [2824, 1120.0]
+    rotation: 0
+    state: enabled
+- name: digital_crc_check_0_0
+  id: digital_crc_check
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    discard_crc: 'False'
+    final_xor: '0xFFFFFFFF'
+    initial_value: '0xFFFFFFFF'
+    input_reflected: 'True'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    num_bits: '32'
+    poly: '0x4C11DB7'
+    result_reflected: 'True'
+    skip_header_bytes: '0'
+    swap_endianness: 'False'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [2776, 256.0]
+    rotation: 0
+    state: enabled
+- name: digital_diff_decoder_bb_0
+  id: digital_diff_decoder_bb
+  parameters:
+    affinity: ''
+    alias: ''
+    coding: digital.DIFF_DIFFERENTIAL
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    modulus: '4'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1480, 1120.0]
+    rotation: 0
+    state: enabled
+- name: digital_diff_decoder_bb_0_0
+  id: digital_diff_decoder_bb
+  parameters:
+    affinity: ''
+    alias: ''
+    coding: digital.DIFF_DIFFERENTIAL
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    modulus: '4'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1432, 256.0]
+    rotation: 0
+    state: enabled
+- name: digital_linear_equalizer_0_1
+  id: digital_linear_equalizer
+  parameters:
+    adapt_after_training: 'True'
+    affinity: ''
+    alg: variable_adaptive_algorithm_0
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    num_taps: '15'
+    sps: '4'
+    training_sequence: '[ ]'
+    training_start_tag: corr_est
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [736, 1056.0]
+    rotation: 0
+    state: enabled
+- name: digital_linear_equalizer_0_1_0
+  id: digital_linear_equalizer
+  parameters:
+    adapt_after_training: 'True'
+    affinity: ''
+    alg: variable_adaptive_algorithm_0
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    num_taps: '15'
+    sps: '4'
+    training_sequence: '[ ]'
+    training_start_tag: corr_est
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [688, 192.0]
+    rotation: 0
+    state: enabled
+- name: digital_map_bb_0
+  id: digital_map_bb
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    map: '[0, 1, 3, 2]'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1632, 1128.0]
+    rotation: 0
+    state: enabled
+- name: digital_map_bb_0_0
+  id: digital_map_bb
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    map: '[0, 1, 3, 2]'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1584, 264.0]
+    rotation: 0
+    state: enabled
+- name: digital_protocol_formatter_async_0
+  id: digital_protocol_formatter_async
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    format: hdr_format
+    maxoutbuf: '0'
+    minoutbuf: '0'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1056, 688.0]
+    rotation: 0
+    state: enabled
+- name: digital_protocol_formatter_async_0_0
+  id: digital_protocol_formatter_async
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    format: hdr_format
+    maxoutbuf: '0'
+    minoutbuf: '0'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1392, 1600.0]
+    rotation: 0
+    state: enabled
+- name: digital_symbol_sync_xx_0_1
+  id: digital_symbol_sync_xx
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: "The Symbol Sync block \naligns the sample clock \nat the receiver to\
+      \ the \nsymbol clock of the\n transmitter"
+    constellation: digital.constellation_bpsk().base()
+    damping: damp_fac
+    loop_bw: phase_bw
+    max_dev: max_dev
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    nfilters: '32'
+    osps: '4'
+    pfb_mf_taps: rrc_taps
+    resamp_type: digital.IR_PFB_MF
+    sps: sps
+    ted_gain: '1.0'
+    ted_type: digital.TED_GARDNER
+    type: cc
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [304, 1052.0]
+    rotation: 0
+    state: enabled
+- name: digital_symbol_sync_xx_0_1_0
+  id: digital_symbol_sync_xx
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: "The Symbol Sync block \naligns the sample clock \nat the receiver to\
+      \ the \nsymbol clock of the\n transmitter"
+    constellation: digital.constellation_bpsk().base()
+    damping: damp_fac
+    loop_bw: phase_bw
+    max_dev: max_dev
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    nfilters: '32'
+    osps: '4'
+    pfb_mf_taps: rrc_taps
+    resamp_type: digital.IR_PFB_MF
+    sps: sps
+    ted_gain: '1.0'
+    ted_type: digital.TED_GARDNER
+    type: cc
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [256, 180.0]
+    rotation: 0
+    state: enabled
+- name: epy_block_0
+  id: epy_block
+  parameters:
+    _source_code: "\"\"\"\nEmbedded Python Block: Sender (Queue + Priority + Arbiter\
+      \ Safe)\n\"\"\"\nimport numpy as np\nfrom gnuradio import gr\nimport pmt\nimport\
+      \ threading\nimport time\nimport struct\nimport random\n\nclass blk(gr.basic_block):\n\
+      \    def __init__(self, max_payload_len=250, retry_limit=10, timeout_ms=300,\
+      \ base_backoff_ms=50, buffer_margin_ms=20):\n        \"\"\"\n        Args:\n\
+      \            buffer_margin_ms: Extra time added to timeout to account for the\
+      \ packet sitting in the Arbiter queue.\n        \"\"\"\n        gr.basic_block.__init__(self,\
+      \ name='Reliable Sender (Queue)', in_sig=None, out_sig=None)\n\n        self.max_payload_len\
+      \ = max_payload_len\n        self.retry_limit = retry_limit\n        self.timeout\
+      \ = timeout_ms / 1000.0\n        self.base_backoff = base_backoff_ms / 1000.0\n\
+      \        self.buffer_margin = buffer_margin_ms / 1000.0 \n\n        # Global\
+      \ Address State (Inputs update these)\n        self.global_dest_addr = 0x00\n\
+      \        self.global_src_addr = 0x00 \n        self.global_seq = 0 \n      \
+      \  \n        # Active Job State (The current transfer uses these)\n        self.active_dest\
+      \ = 0x00\n        self.active_src = 0x00\n        self.active_priority = 10\
+      \ # Default low priority\n        \n        self.msg_fragments = []\n      \
+      \  self.fragment_index = 0\n        self.retry_count = 0\n        self.state\
+      \ = \"IDLE\"\n        self.last_send_time = 0\n        \n        # === QUEUE\
+      \ SYSTEM ===\n        # Stores tuples: {'dest': dest, 'src': src, 'data': payload_bytes,\
+      \ 'priority': int}\n        self.tx_queue = []\n        \n        self.lock\
+      \ = threading.Lock()\n        self.stop_thread = False\n\n        self.message_port_register_in(pmt.intern('msg_in'))\n\
+      \        self.message_port_register_in(pmt.intern('addr_in'))\n        self.message_port_register_in(pmt.intern('ack_in'))\n\
+      \        self.message_port_register_out(pmt.intern('packet_out'))\n        self.message_port_register_out(pmt.intern('feedback_out'))\n\
+      \n        self.set_msg_handler(pmt.intern('msg_in'), self.handle_msg)\n    \
+      \    self.set_msg_handler(pmt.intern('addr_in'), self.handle_addr)\n       \
+      \ self.set_msg_handler(pmt.intern('ack_in'), self.handle_ack)\n\n        self.arq_thread\
+      \ = threading.Thread(target=self.run_arq_loop)\n        self.arq_thread.daemon\
+      \ = True\n        self.arq_thread.start()\n\n    def __del__(self):\n      \
+      \  self.stop_thread = True\n        if self.arq_thread.is_alive(): self.arq_thread.join()\n\
+      \n    def handle_addr(self, msg):\n        \"\"\" Update the GLOBAL address\
+      \ registers. \"\"\"\n        if not pmt.is_pair(msg): return\n        data =\
+      \ pmt.u8vector_elements(pmt.cdr(msg))\n        if len(data) >= 2:\n        \
+      \    with self.lock:\n                self.global_dest_addr = data[0]\n    \
+      \            self.global_src_addr = data[1]\n\n    def handle_msg(self, msg):\n\
+      \        \"\"\" Handle new message input. Captures Priority from Metadata. \"\
+      \"\"\n        if not pmt.is_pair(msg): return\n        payload_bytes = pmt.u8vector_elements(pmt.cdr(msg))\n\
+      \        if len(payload_bytes) == 0: return\n        \n        # Extract Priority\
+      \ from Metadata (Default to 10 if missing)\n        prio = 10\n        meta\
+      \ = pmt.car(msg)\n        if pmt.is_dict(meta):\n            p_val = pmt.dict_ref(meta,\
+      \ pmt.intern(\"priority\"), pmt.PMT_NIL)\n            if not pmt.eq(p_val, pmt.PMT_NIL):\n\
+      \                prio = pmt.to_long(p_val)\n\n        with self.lock:\n    \
+      \        # Capture the GLOBAL address at the moment of queuing\n           \
+      \ job = {\n                'dest': self.global_dest_addr,\n                'src':\
+      \ self.global_src_addr,\n                'data': payload_bytes,\n          \
+      \      'priority': prio\n            }\n\n            if self.state == \"IDLE\"\
+      :\n                self.load_job(job)\n            else:\n                self.tx_queue.append(job)\n\
+      \n    def load_job(self, job):\n        \"\"\" Loads a job into the ACTIVE transmission\
+      \ buffers \"\"\"\n        # Freeze the addresses and priority for this specific\
+      \ transfer\n        self.active_dest = job['dest']\n        self.active_src\
+      \ = job['src']\n        self.active_priority = job['priority']\n        payload\
+      \ = job['data']\n        \n        self.msg_fragments = []\n        for i in\
+      \ range(0, len(payload), self.max_payload_len):\n            self.msg_fragments.append(payload[i\
+      \ : i + self.max_payload_len])\n\n        self.fragment_index = 0\n        self.retry_count\
+      \ = 0\n        self.state = \"SENDING\"\n        self.last_send_time = 0\n\n\
+      \    def check_queue(self):\n        \"\"\" Called after success/fail. Checks\
+      \ if more work exists. \"\"\"\n        if len(self.tx_queue) > 0:\n        \
+      \    next_job = self.tx_queue.pop(0)\n            self.load_job(next_job)\n\
+      \        else:\n            self.state = \"IDLE\"\n\n    def handle_ack(self,\
+      \ msg):\n        if self.state == \"IDLE\": return\n        if not pmt.is_pair(msg):\
+      \ return\n        \n        try:\n            ack_data = pmt.u8vector_elements(pmt.cdr(msg))\n\
+      \            if len(ack_data) < 7: return \n            if ack_data[2] != 1:\
+      \ return \n\n            requested_seq = (ack_data[3] << 8) | ack_data[4]\n\n\
+      \            with self.lock:\n                next_seq = (self.global_seq +\
+      \ 1) & 0xFFFF\n                if requested_seq == next_seq:\n             \
+      \       self.global_seq = next_seq\n                    self.fragment_index\
+      \ += 1\n                    self.retry_count = 0\n                    \n   \
+      \                 if self.fragment_index >= len(self.msg_fragments):\n     \
+      \                   # === MSG DONE: SUCCESS ===\n                        self.send_feedback(True)\n\
+      \                        self.check_queue()\n                    else:\n   \
+      \                     self.state = \"SENDING\"\n                        self.last_send_time\
+      \ = 0 \n        except Exception: pass\n\n    def send_packet(self):\n     \
+      \   if self.fragment_index >= len(self.msg_fragments): return\n        fragment\
+      \ = self.msg_fragments[self.fragment_index]\n        ack_flag = 0\n        fin_flag\
+      \ = 1 if (self.fragment_index == len(self.msg_fragments) - 1) else 0\n     \
+      \   payload_len = len(fragment)\n\n        # Header: Dest, Src, AckFlag, Seq,\
+      \ Fin, Len\n        header = struct.pack('>BBBHBB', self.active_dest, self.active_src,\
+      \ ack_flag, self.global_seq, fin_flag, payload_len)\n        full_packet = list(header)\
+      \ + list(fragment)\n        \n        # Create Metadata with the Active Priority\n\
+      \        meta = pmt.make_dict()\n        meta = pmt.dict_add(meta, pmt.intern(\"\
+      priority\"), pmt.from_long(self.active_priority))\n        \n        out_pmt\
+      \ = pmt.cons(meta, pmt.init_u8vector(len(full_packet), full_packet))\n     \
+      \   self.message_port_pub(pmt.intern('packet_out'), out_pmt)\n        self.last_send_time\
+      \ = time.time()\n\n    def send_feedback(self, success):\n        status = \"\
+      ACK\" if success else \"FAIL\"\n        self.message_port_pub(pmt.intern('feedback_out'),\
+      \ pmt.cons(pmt.PMT_NIL, pmt.intern(status)))\n\n    def run_arq_loop(self):\n\
+      \        while not self.stop_thread:\n            time.sleep(0.01)\n       \
+      \     with self.lock:\n                if self.state == \"SENDING\" or self.state\
+      \ == \"WAIT_ACK\":\n                    # Base Timeout + Backoff + ARBITER MARGIN\n\
+      \                    wait_threshold = self.timeout + self.buffer_margin\n  \
+      \                  \n                    if self.retry_count > 0:\n        \
+      \                exponent = min(self.retry_count, 4)\n                     \
+      \   wait_threshold += random.uniform(0, self.base_backoff * (2 ** (exponent\
+      \ - 1)))\n\n                    if self.last_send_time == 0 or (time.time()\
+      \ - self.last_send_time) > wait_threshold:\n                        if self.retry_count\
+      \ < self.retry_limit:\n                            self.send_packet()\n    \
+      \                        self.state = \"WAIT_ACK\"\n                       \
+      \     if self.last_send_time != 0: self.retry_count += 1\n                 \
+      \       else:\n                            # === MSG DONE: FAILED ===\n    \
+      \                        self.send_feedback(False)\n                       \
+      \     self.check_queue()\n"
+    affinity: ''
+    alias: ''
+    base_backoff_ms: '10'
+    buffer_margin_ms: '50'
+    comment: ''
+    max_payload_len: '250'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    retry_limit: '15'
+    timeout_ms: '100'
+  states:
+    _io_cache: '(''Reliable Sender (Queue)'', ''blk'', [(''max_payload_len'', ''250''),
+      (''retry_limit'', ''10''), (''timeout_ms'', ''300''), (''base_backoff_ms'',
+      ''50''), (''buffer_margin_ms'', ''20'')], [(''ack_in'', ''message'', 1), (''addr_in'',
+      ''message'', 1), (''msg_in'', ''message'', 1)], [(''feedback_out'', ''message'',
+      1), (''packet_out'', ''message'', 1)], ''\n        Args:\n            buffer_margin_ms:
+      Extra time added to timeout to account for the packet sitting in the Arbiter
+      queue.\n        '', [''max_payload_len'', ''retry_limit''])'
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [304, 656.0]
+    rotation: 0
+    state: enabled
+- name: epy_block_0_0
+  id: epy_block
+  parameters:
+    _source_code: "\"\"\"\nEmbedded Python Block: Sender (Queue + Priority + Arbiter\
+      \ Safe)\n\"\"\"\nimport numpy as np\nfrom gnuradio import gr\nimport pmt\nimport\
+      \ threading\nimport time\nimport struct\nimport random\n\nclass blk(gr.basic_block):\n\
+      \    def __init__(self, max_payload_len=250, retry_limit=10, timeout_ms=300,\
+      \ base_backoff_ms=50, buffer_margin_ms=20):\n        \"\"\"\n        Args:\n\
+      \            buffer_margin_ms: Extra time added to timeout to account for the\
+      \ packet sitting in the Arbiter queue.\n        \"\"\"\n        gr.basic_block.__init__(self,\
+      \ name='Reliable Sender (Queue)', in_sig=None, out_sig=None)\n\n        self.max_payload_len\
+      \ = max_payload_len\n        self.retry_limit = retry_limit\n        self.timeout\
+      \ = timeout_ms / 1000.0\n        self.base_backoff = base_backoff_ms / 1000.0\n\
+      \        self.buffer_margin = buffer_margin_ms / 1000.0 \n\n        # Global\
+      \ Address State (Inputs update these)\n        self.global_dest_addr = 0x00\n\
+      \        self.global_src_addr = 0x00 \n        self.global_seq = 0 \n      \
+      \  \n        # Active Job State (The current transfer uses these)\n        self.active_dest\
+      \ = 0x00\n        self.active_src = 0x00\n        self.active_priority = 10\
+      \ # Default low priority\n        \n        self.msg_fragments = []\n      \
+      \  self.fragment_index = 0\n        self.retry_count = 0\n        self.state\
+      \ = \"IDLE\"\n        self.last_send_time = 0\n        \n        # === QUEUE\
+      \ SYSTEM ===\n        # Stores tuples: {'dest': dest, 'src': src, 'data': payload_bytes,\
+      \ 'priority': int}\n        self.tx_queue = []\n        \n        self.lock\
+      \ = threading.Lock()\n        self.stop_thread = False\n\n        self.message_port_register_in(pmt.intern('msg_in'))\n\
+      \        self.message_port_register_in(pmt.intern('addr_in'))\n        self.message_port_register_in(pmt.intern('ack_in'))\n\
+      \        self.message_port_register_out(pmt.intern('packet_out'))\n        self.message_port_register_out(pmt.intern('feedback_out'))\n\
+      \n        self.set_msg_handler(pmt.intern('msg_in'), self.handle_msg)\n    \
+      \    self.set_msg_handler(pmt.intern('addr_in'), self.handle_addr)\n       \
+      \ self.set_msg_handler(pmt.intern('ack_in'), self.handle_ack)\n\n        self.arq_thread\
+      \ = threading.Thread(target=self.run_arq_loop)\n        self.arq_thread.daemon\
+      \ = True\n        self.arq_thread.start()\n\n    def __del__(self):\n      \
+      \  self.stop_thread = True\n        if self.arq_thread.is_alive(): self.arq_thread.join()\n\
+      \n    def handle_addr(self, msg):\n        \"\"\" Update the GLOBAL address\
+      \ registers. \"\"\"\n        if not pmt.is_pair(msg): return\n        data =\
+      \ pmt.u8vector_elements(pmt.cdr(msg))\n        if len(data) >= 2:\n        \
+      \    with self.lock:\n                self.global_dest_addr = data[0]\n    \
+      \            self.global_src_addr = data[1]\n\n    def handle_msg(self, msg):\n\
+      \        \"\"\" Handle new message input. Captures Priority from Metadata. \"\
+      \"\"\n        if not pmt.is_pair(msg): return\n        payload_bytes = pmt.u8vector_elements(pmt.cdr(msg))\n\
+      \        if len(payload_bytes) == 0: return\n        \n        # Extract Priority\
+      \ from Metadata (Default to 10 if missing)\n        prio = 10\n        meta\
+      \ = pmt.car(msg)\n        if pmt.is_dict(meta):\n            p_val = pmt.dict_ref(meta,\
+      \ pmt.intern(\"priority\"), pmt.PMT_NIL)\n            if not pmt.eq(p_val, pmt.PMT_NIL):\n\
+      \                prio = pmt.to_long(p_val)\n\n        with self.lock:\n    \
+      \        # Capture the GLOBAL address at the moment of queuing\n           \
+      \ job = {\n                'dest': self.global_dest_addr,\n                'src':\
+      \ self.global_src_addr,\n                'data': payload_bytes,\n          \
+      \      'priority': prio\n            }\n\n            if self.state == \"IDLE\"\
+      :\n                self.load_job(job)\n            else:\n                self.tx_queue.append(job)\n\
+      \n    def load_job(self, job):\n        \"\"\" Loads a job into the ACTIVE transmission\
+      \ buffers \"\"\"\n        # Freeze the addresses and priority for this specific\
+      \ transfer\n        self.active_dest = job['dest']\n        self.active_src\
+      \ = job['src']\n        self.active_priority = job['priority']\n        payload\
+      \ = job['data']\n        \n        self.msg_fragments = []\n        for i in\
+      \ range(0, len(payload), self.max_payload_len):\n            self.msg_fragments.append(payload[i\
+      \ : i + self.max_payload_len])\n\n        self.fragment_index = 0\n        self.retry_count\
+      \ = 0\n        self.state = \"SENDING\"\n        self.last_send_time = 0\n\n\
+      \    def check_queue(self):\n        \"\"\" Called after success/fail. Checks\
+      \ if more work exists. \"\"\"\n        if len(self.tx_queue) > 0:\n        \
+      \    next_job = self.tx_queue.pop(0)\n            self.load_job(next_job)\n\
+      \        else:\n            self.state = \"IDLE\"\n\n    def handle_ack(self,\
+      \ msg):\n        if self.state == \"IDLE\": return\n        if not pmt.is_pair(msg):\
+      \ return\n        \n        try:\n            ack_data = pmt.u8vector_elements(pmt.cdr(msg))\n\
+      \            if len(ack_data) < 7: return \n            if ack_data[2] != 1:\
+      \ return \n\n            requested_seq = (ack_data[3] << 8) | ack_data[4]\n\n\
+      \            with self.lock:\n                next_seq = (self.global_seq +\
+      \ 1) & 0xFFFF\n                if requested_seq == next_seq:\n             \
+      \       self.global_seq = next_seq\n                    self.fragment_index\
+      \ += 1\n                    self.retry_count = 0\n                    \n   \
+      \                 if self.fragment_index >= len(self.msg_fragments):\n     \
+      \                   # === MSG DONE: SUCCESS ===\n                        self.send_feedback(True)\n\
+      \                        self.check_queue()\n                    else:\n   \
+      \                     self.state = \"SENDING\"\n                        self.last_send_time\
+      \ = 0 \n        except Exception: pass\n\n    def send_packet(self):\n     \
+      \   if self.fragment_index >= len(self.msg_fragments): return\n        fragment\
+      \ = self.msg_fragments[self.fragment_index]\n        ack_flag = 0\n        fin_flag\
+      \ = 1 if (self.fragment_index == len(self.msg_fragments) - 1) else 0\n     \
+      \   payload_len = len(fragment)\n\n        # Header: Dest, Src, AckFlag, Seq,\
+      \ Fin, Len\n        header = struct.pack('>BBBHBB', self.active_dest, self.active_src,\
+      \ ack_flag, self.global_seq, fin_flag, payload_len)\n        full_packet = list(header)\
+      \ + list(fragment)\n        \n        # Create Metadata with the Active Priority\n\
+      \        meta = pmt.make_dict()\n        meta = pmt.dict_add(meta, pmt.intern(\"\
+      priority\"), pmt.from_long(self.active_priority))\n        \n        out_pmt\
+      \ = pmt.cons(meta, pmt.init_u8vector(len(full_packet), full_packet))\n     \
+      \   self.message_port_pub(pmt.intern('packet_out'), out_pmt)\n        self.last_send_time\
+      \ = time.time()\n\n    def send_feedback(self, success):\n        status = \"\
+      ACK\" if success else \"FAIL\"\n        self.message_port_pub(pmt.intern('feedback_out'),\
+      \ pmt.cons(pmt.PMT_NIL, pmt.intern(status)))\n\n    def run_arq_loop(self):\n\
+      \        while not self.stop_thread:\n            time.sleep(0.01)\n       \
+      \     with self.lock:\n                if self.state == \"SENDING\" or self.state\
+      \ == \"WAIT_ACK\":\n                    # Base Timeout + Backoff + ARBITER MARGIN\n\
+      \                    wait_threshold = self.timeout + self.buffer_margin\n  \
+      \                  \n                    if self.retry_count > 0:\n        \
+      \                exponent = min(self.retry_count, 4)\n                     \
+      \   wait_threshold += random.uniform(0, self.base_backoff * (2 ** (exponent\
+      \ - 1)))\n\n                    if self.last_send_time == 0 or (time.time()\
+      \ - self.last_send_time) > wait_threshold:\n                        if self.retry_count\
+      \ < self.retry_limit:\n                            self.send_packet()\n    \
+      \                        self.state = \"WAIT_ACK\"\n                       \
+      \     if self.last_send_time != 0: self.retry_count += 1\n                 \
+      \       else:\n                            # === MSG DONE: FAILED ===\n    \
+      \                        self.send_feedback(False)\n                       \
+      \     self.check_queue()\n"
+    affinity: ''
+    alias: ''
+    base_backoff_ms: '10'
+    buffer_margin_ms: '50'
+    comment: ''
+    max_payload_len: '250'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    retry_limit: '15'
+    timeout_ms: '100'
+  states:
+    _io_cache: '(''Reliable Sender (Queue)'', ''blk'', [(''max_payload_len'', ''250''),
+      (''retry_limit'', ''10''), (''timeout_ms'', ''300''), (''base_backoff_ms'',
+      ''50''), (''buffer_margin_ms'', ''20'')], [(''ack_in'', ''message'', 1), (''addr_in'',
+      ''message'', 1), (''msg_in'', ''message'', 1)], [(''feedback_out'', ''message'',
+      1), (''packet_out'', ''message'', 1)], ''\n        Args:\n            buffer_margin_ms:
+      Extra time added to timeout to account for the packet sitting in the Arbiter
+      queue.\n        '', [''max_payload_len'', ''retry_limit''])'
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [624, 1448.0]
+    rotation: 0
+    state: enabled
+- name: epy_block_1
+  id: epy_block
+  parameters:
+    _source_code: "\"\"\"\nEmbedded Python Block: EchoWave Core (GUI + Priority)\n\
+      \"\"\"\nimport numpy as np\nfrom gnuradio import gr\nimport pmt\nimport sys\n\
+      import datetime\nfrom PyQt5 import QtWidgets, QtCore, QtGui\n\nclass blk(gr.sync_block):\n\
+      \    def __init__(self, node_id_hex='A1'):\n        gr.sync_block.__init__(self,\
+      \ name='EchoWave Core', in_sig=None, out_sig=None)\n        self.node_id_hex\
+      \ = node_id_hex\n        \n        self.message_port_register_in(pmt.intern(\"\
+      msg_in\"))\n        self.message_port_register_in(pmt.intern(\"feedback_in\"\
+      ))\n        self.message_port_register_out(pmt.intern(\"addr_out\"))\n     \
+      \   self.message_port_register_out(pmt.intern(\"msg_out\"))\n\n        self.set_msg_handler(pmt.intern(\"\
+      msg_in\"), self.handle_msg_in)\n        self.set_msg_handler(pmt.intern(\"feedback_in\"\
+      ), self.handle_feedback)\n\n        self.qapp = QtWidgets.QApplication.instance()\n\
+      \        if not self.qapp: self.qapp = QtWidgets.QApplication(sys.argv)\n  \
+      \      \n        self.gui = EchoWaveWindow(self, f\"Node {node_id_hex}\", node_id_hex)\n\
+      \        self.gui.show()\n        \n        self.cleanup_timer = QtCore.QTimer()\n\
+      \        self.cleanup_timer.timeout.connect(self.hide_ghost_window)\n      \
+      \  self.cleanup_timer.start(200)\n\n    def hide_ghost_window(self):\n     \
+      \   for w in QtWidgets.QApplication.topLevelWidgets():\n            if isinstance(w,\
+      \ QtWidgets.QMainWindow) and w != self.gui: w.hide()\n        self.cleanup_timer.stop()\n\
+      \n    def process_user_input(self, dst_hex, text, priority):\n        \"\"\"\
+      \ Include Priority in the Message Metadata \"\"\"\n        try:\n          \
+      \  src_val = int(self.node_id_hex, 16)\n            dst_val = int(dst_hex, 16)\n\
+      \            \n            # 1. Address PDU\n            addr_list = [dst_val,\
+      \ src_val]\n            self.message_port_pub(pmt.intern(\"addr_out\"), pmt.cons(pmt.make_dict(),\
+      \ pmt.init_u8vector(2, addr_list)))\n            \n            # 2. Message\
+      \ PDU with Metadata\n            msg_bytes = [x for x in text.encode('utf-8')]\n\
+      \            \n            # Create Metadata Dictionary: {'priority': priority}\n\
+      \            meta = pmt.make_dict()\n            meta = pmt.dict_add(meta, pmt.intern(\"\
+      priority\"), pmt.from_long(int(priority)))\n            \n            pmt_msg\
+      \ = pmt.cons(meta, pmt.init_u8vector(len(msg_bytes), msg_bytes))\n         \
+      \   self.message_port_pub(pmt.intern(\"msg_out\"), pmt_msg)\n            return\
+      \ True\n        except ValueError:\n            return False\n\n    def handle_msg_in(self,\
+      \ pdu):\n        try:\n            payload = bytes(pmt.to_python(pmt.cdr(pdu)))\n\
+      \            if len(payload) == 0: return\n            msg_str = payload.decode('utf-8',\
+      \ errors='ignore')\n            if len(msg_str.strip()) == 0: return\n\n   \
+      \         meta = pmt.to_python(pmt.car(pdu))\n            source_id = \"UNKNOWN\"\
+      \n            if isinstance(meta, dict) and 'src_id' in meta:\n            \
+      \    source_id = f\"{meta['src_id']:02X}\"\n            \n            self.gui.signal_rx_msg.emit(source_id,\
+      \ msg_str)\n        except Exception: pass\n\n    def handle_feedback(self,\
+      \ pdu):\n        try:\n            status = pmt.symbol_to_string(pmt.cdr(pdu))\n\
+      \            self.gui.signal_ack.emit(\"ACK\" in status)\n        except: self.gui.signal_ack.emit(False)\n\
+      \nclass EchoWaveWindow(QtWidgets.QWidget):\n    signal_rx_msg = QtCore.pyqtSignal(str,\
+      \ str)\n    signal_ack = QtCore.pyqtSignal(bool)\n\n    def __init__(self, block_ref,\
+      \ win_title, my_fixed_id):\n        super().__init__()\n        self.block =\
+      \ block_ref\n        self.history = {} \n        self.current_chat_id = None\
+      \ \n        self.win_title = win_title\n        self.my_id = my_fixed_id\n \
+      \       \n        self.signal_rx_msg.connect(self.on_receive_message)\n    \
+      \    self.signal_ack.connect(self.on_ack_received)\n        self.init_ui()\n\
+      \n    def init_ui(self):\n        self.setWindowTitle(f\"EchoWave - {self.win_title}\"\
+      )\n        self.resize(950, 650)\n        self.setStyleSheet(\"font-family:\
+      \ Segoe UI, Arial; font-size: 14px;\")\n        \n        main_layout = QtWidgets.QHBoxLayout(self)\n\
+      \        main_layout.setContentsMargins(0,0,0,0); main_layout.setSpacing(0)\n\
+      \n        # === SIDEBAR ===\n        sidebar = QtWidgets.QWidget()\n       \
+      \ sidebar.setFixedWidth(280)\n        sidebar.setStyleSheet(\"background-color:\
+      \ #111b21; color: #e9edef; border-right: 1px solid #333;\")\n        sidebar_layout\
+      \ = QtWidgets.QVBoxLayout(sidebar)\n        \n        brand = QtWidgets.QLabel(\"\
+      EchoWave\")\n        brand.setStyleSheet(\"font-size: 24px; font-weight: bold;\
+      \ color: #00a884; margin: 15px 0;\")\n        sidebar_layout.addWidget(brand)\n\
+      \n        conn_group = QtWidgets.QGroupBox(\"CONFIGURATION\")\n        conn_group.setStyleSheet(\"\
+      QGroupBox { border: 1px solid #333; margin-top: 10px; padding-top: 10px; font-weight:\
+      \ bold; color: #8696a0; }\")\n        conn_layout = QtWidgets.QVBoxLayout(conn_group)\n\
+      \        \n        # ID Display\n        row1 = QtWidgets.QHBoxLayout()\n  \
+      \      row1.addWidget(QtWidgets.QLabel(\"MY ID:\"))\n        lbl = QtWidgets.QLabel(self.my_id)\n\
+      \        lbl.setStyleSheet(\"font-weight: bold; color: #00a884; font-size: 16px;\"\
+      )\n        row1.addWidget(lbl)\n        conn_layout.addLayout(row1)\n\n    \
+      \    # Target Input\n        row2 = QtWidgets.QHBoxLayout()\n        row2.addWidget(QtWidgets.QLabel(\"\
+      TO ID:\"))\n        self.dst_addr_input = QtWidgets.QLineEdit()\n        self.dst_addr_input.setMaxLength(2)\n\
+      \        self.dst_addr_input.setPlaceholderText(\"Hex\")\n        self.dst_addr_input.setStyleSheet(\"\
+      background: #2a3942; color: white; border: none; padding: 5px;\")\n        row2.addWidget(self.dst_addr_input)\n\
+      \        conn_layout.addLayout(row2)\n\n        # Priority Input\n        row3\
+      \ = QtWidgets.QHBoxLayout()\n        row3.addWidget(QtWidgets.QLabel(\"PRIO\
+      \ (0-10):\"))\n        self.prio_input = QtWidgets.QSpinBox()\n        self.prio_input.setRange(0,\
+      \ 10)\n        self.prio_input.setValue(5) # Default priority\n        self.prio_input.setStyleSheet(\"\
+      background: #2a3942; color: white; border: none; padding: 5px;\")\n        row3.addWidget(self.prio_input)\n\
+      \        conn_layout.addLayout(row3)\n\n        self.connect_btn = QtWidgets.QPushButton(\"\
+      INIT LINK\")\n        self.connect_btn.setStyleSheet(\"background-color: #00a884;\
+      \ color: white; border-radius: 5px; padding: 8px; font-weight: bold;\")\n  \
+      \      self.connect_btn.clicked.connect(self.manual_connect)\n        conn_layout.addWidget(self.connect_btn)\n\
+      \        \n        sidebar_layout.addWidget(conn_group)\n        sidebar_layout.addWidget(QtWidgets.QLabel(\"\
+      Active Feeds:\"))\n        self.contact_list = QtWidgets.QListWidget()\n   \
+      \     self.contact_list.setStyleSheet(\"background-color: transparent; border:\
+      \ none; color: #d1d7db;\")\n        self.contact_list.itemClicked.connect(self.switch_conversation_from_list)\n\
+      \        sidebar_layout.addWidget(self.contact_list)\n\n        # === RIGHT\
+      \ PANEL ===\n        right_panel = QtWidgets.QWidget()\n        right_panel.setStyleSheet(\"\
+      background-color: #0b141a;\") \n        right_layout = QtWidgets.QVBoxLayout(right_panel)\n\
+      \        right_layout.setContentsMargins(0,0,0,0)\n\n        # Header\n    \
+      \    header = QtWidgets.QWidget()\n        header.setStyleSheet(\"background-color:\
+      \ #202c33; padding: 10px;\")\n        header.setFixedHeight(60)\n        h_layout\
+      \ = QtWidgets.QHBoxLayout(header)\n        self.chat_title = QtWidgets.QLabel(\"\
+      Select a Link\")\n        self.chat_title.setStyleSheet(\"font-size: 16px; font-weight:\
+      \ bold; color: white; background: transparent;\")\n        self.clear_btn =\
+      \ QtWidgets.QPushButton(\"Clear\")\n        self.clear_btn.setStyleSheet(\"\
+      color: #ef5350; background: transparent; border: 1px solid #ef5350;\")\n   \
+      \     self.clear_btn.clicked.connect(self.clear_current_history)\n        h_layout.addWidget(self.chat_title);\
+      \ h_layout.addStretch(); h_layout.addWidget(self.clear_btn)\n\n        # Chat\
+      \ Area\n        self.scroll_area = QtWidgets.QScrollArea()\n        self.scroll_area.setWidgetResizable(True)\n\
+      \        self.scroll_area.setStyleSheet(\"border: none; background: transparent;\"\
+      )\n        self.chat_container = QtWidgets.QWidget()\n        self.chat_layout\
+      \ = QtWidgets.QVBoxLayout(self.chat_container)\n        self.chat_layout.addStretch()\n\
+      \        self.scroll_area.setWidget(self.chat_container)\n\n        # Input\
+      \ Area\n        self.footer = QtWidgets.QWidget()\n        self.footer.setStyleSheet(\"\
+      background-color: #202c33; padding: 10px;\")\n        self.footer.setVisible(False)\n\
+      \        f_layout = QtWidgets.QHBoxLayout(self.footer)\n        self.msg_input\
+      \ = QtWidgets.QLineEdit()\n        self.msg_input.setPlaceholderText(\"Type\
+      \ a message\")\n        self.msg_input.setStyleSheet(\"background-color: #2a3942;\
+      \ color: white; border: none; padding: 12px; border-radius: 8px;\")\n      \
+      \  self.msg_input.returnPressed.connect(self.send_message)\n        self.send_btn\
+      \ = QtWidgets.QPushButton(\"\u27A4\")\n        self.send_btn.setFixedSize(45,\
+      \ 40)\n        self.send_btn.setStyleSheet(\"background-color: #00a884; color:\
+      \ white; border-radius: 8px; font-size: 18px;\")\n        self.send_btn.clicked.connect(self.send_message)\n\
+      \        f_layout.addWidget(self.msg_input); f_layout.addWidget(self.send_btn)\n\
+      \n        right_layout.addWidget(header); right_layout.addWidget(self.scroll_area);\
+      \ right_layout.addWidget(self.footer)\n        main_layout.addWidget(sidebar);\
+      \ main_layout.addWidget(right_panel)\n\n    def manual_connect(self):\n    \
+      \    target = self.dst_addr_input.text().strip().upper()\n        if len(target)\
+      \ > 0:\n            if len(target) > 2: target = target[:2]\n            self.open_conversation(target)\n\
+      \n    def open_conversation(self, target_id):\n        self.current_chat_id\
+      \ = target_id\n        self.chat_title.setText(f\"Feed: {target_id}\")\n   \
+      \     self.footer.setVisible(True)\n        self.ensure_contact_exists(target_id)\n\
+      \        self.render_history(target_id)\n\n    def ensure_contact_exists(self,\
+      \ addr):\n        items = [self.contact_list.item(i).text() for i in range(self.contact_list.count())]\n\
+      \        if addr not in items: self.contact_list.addItem(addr)\n\n    def switch_conversation_from_list(self,\
+      \ item):\n        self.dst_addr_input.setText(item.text())\n        self.open_conversation(item.text())\n\
+      \n    def clear_current_history(self):\n        if self.current_chat_id:\n \
+      \           self.history[self.current_chat_id] = []\n            self.render_history(self.current_chat_id)\n\
+      \n    def render_history(self, chat_id):\n        while self.chat_layout.count()\
+      \ > 1:\n            item = self.chat_layout.takeAt(1)\n            if item.widget():\
+      \ item.widget().deleteLater()\n        msgs = self.history.get(chat_id, [])\n\
+      \        for m in msgs: self.add_bubble(m['text'], m['is_sender'], m['time'],\
+      \ m['status'], m.get('prio', 10))\n\n    def save_to_history(self, chat_id,\
+      \ text, is_sender, status=\"\", prio=10):\n        if chat_id not in self.history:\
+      \ self.history[chat_id] = []\n        entry = {'text': text, 'is_sender': is_sender,\
+      \ 'time': datetime.datetime.now().strftime(\"%H:%M\"), 'status': status, 'prio':\
+      \ prio}\n        self.history[chat_id].append(entry)\n\n    def send_message(self):\n\
+      \        text = self.msg_input.text().strip()\n        dst = self.current_chat_id\
+      \ \n        prio = self.prio_input.value()\n        if not text or not dst:\
+      \ return\n\n        if self.block.process_user_input(dst, text, prio):\n   \
+      \         self.save_to_history(dst, text, True, \"pending\", prio)\n       \
+      \     self.add_bubble(text, True, datetime.datetime.now().strftime(\"%H:%M\"\
+      ), \"pending\", prio)\n            self.msg_input.clear()\n\n    def on_receive_message(self,\
+      \ source, msg):\n        self.save_to_history(source, msg, False)\n        self.ensure_contact_exists(source)\n\
+      \        if source == self.current_chat_id:\n            self.add_bubble(msg,\
+      \ False, datetime.datetime.now().strftime(\"%H:%M\"), \"\", 10)\n\n    def on_ack_received(self,\
+      \ success):\n        if self.current_chat_id in self.history:\n            chat_log\
+      \ = self.history[self.current_chat_id]\n            for i in range(len(chat_log)-1,\
+      \ -1, -1):\n                if chat_log[i]['is_sender'] and chat_log[i]['status']\
+      \ == \"pending\":\n                    chat_log[i]['status'] = \"success\" if\
+      \ success else \"fail\"\n                    self.render_history(self.current_chat_id)\n\
+      \                    break\n\n    def add_bubble(self, text, is_sender, time,\
+      \ status, prio):\n        row = QtWidgets.QWidget(); row.setStyleSheet(\"background:\
+      \ transparent;\")\n        layout = QtWidgets.QHBoxLayout(row)\n        bubble\
+      \ = QtWidgets.QFrame()\n        b_layout = QtWidgets.QVBoxLayout(bubble)\n \
+      \       \n        if is_sender:\n            bubble.setStyleSheet(\"background-color:\
+      \ #005c4b; border-radius: 10px; margin-left: 50px;\")\n            layout.addStretch();\
+      \ layout.addWidget(bubble)\n        else:\n            bubble.setStyleSheet(\"\
+      background-color: #202c33; border-radius: 10px; margin-right: 50px;\")\n   \
+      \         layout.addWidget(bubble); layout.addStretch()\n            \n    \
+      \    lbl = QtWidgets.QLabel(f\"[{prio}] {text}\") if is_sender else QtWidgets.QLabel(text)\n\
+      \        lbl.setWordWrap(True)\n        lbl.setStyleSheet(\"color: #e9edef;\
+      \ font-size: 14px; background: transparent; border: none;\")\n        b_layout.addWidget(lbl)\n\
+      \        \n        meta = QtWidgets.QHBoxLayout(); meta.addStretch()\n     \
+      \   t_lbl = QtWidgets.QLabel(time)\n        t_lbl.setStyleSheet(\"color: #8696a0;\
+      \ font-size: 11px; background: transparent; border: none;\")\n        meta.addWidget(t_lbl)\n\
+      \        \n        if is_sender:\n            icon = \"\U0001F552\"\n      \
+      \      color = \"#8696a0\"\n            if status == \"success\": icon = \"\u2713\
+      \u2713\"; color = \"#53bdeb\"\n            elif status == \"fail\": icon = \"\
+      !\"; color = \"red\"\n            s_lbl = QtWidgets.QLabel(icon)\n         \
+      \   s_lbl.setStyleSheet(f\"color: {color}; font-size: 11px; font-weight: bold;\
+      \ background: transparent; border: none;\")\n            meta.addWidget(s_lbl)\n\
+      \            \n        b_layout.addLayout(meta)\n        self.chat_layout.addWidget(row)\n\
+      \        QtCore.QTimer.singleShot(10, lambda: self.scroll_area.verticalScrollBar().setValue(self.scroll_area.verticalScrollBar().maximum()))\n"
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    node_id_hex: my_addr
+  states:
+    _io_cache: ('EchoWave Core', 'blk', [('node_id_hex', "'A1'")], [('msg_in', 'message',
+      1), ('feedback_in', 'message', 1)], [('msg_out', 'message', 1), ('addr_out',
+      'message', 1)], '', ['node_id_hex'])
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [512, 848.0]
+    rotation: 0
+    state: enabled
+- name: epy_block_1_0
+  id: epy_block
+  parameters:
+    _source_code: "\"\"\"\nEmbedded Python Block: EchoWave Core (GUI + Priority)\n\
+      \"\"\"\nimport numpy as np\nfrom gnuradio import gr\nimport pmt\nimport sys\n\
+      import datetime\nfrom PyQt5 import QtWidgets, QtCore, QtGui\n\nclass blk(gr.sync_block):\n\
+      \    def __init__(self, node_id_hex='A1'):\n        gr.sync_block.__init__(self,\
+      \ name='EchoWave Core', in_sig=None, out_sig=None)\n        self.node_id_hex\
+      \ = node_id_hex\n        \n        self.message_port_register_in(pmt.intern(\"\
+      msg_in\"))\n        self.message_port_register_in(pmt.intern(\"feedback_in\"\
+      ))\n        self.message_port_register_out(pmt.intern(\"addr_out\"))\n     \
+      \   self.message_port_register_out(pmt.intern(\"msg_out\"))\n\n        self.set_msg_handler(pmt.intern(\"\
+      msg_in\"), self.handle_msg_in)\n        self.set_msg_handler(pmt.intern(\"feedback_in\"\
+      ), self.handle_feedback)\n\n        self.qapp = QtWidgets.QApplication.instance()\n\
+      \        if not self.qapp: self.qapp = QtWidgets.QApplication(sys.argv)\n  \
+      \      \n        self.gui = EchoWaveWindow(self, f\"Node {node_id_hex}\", node_id_hex)\n\
+      \        self.gui.show()\n        \n        self.cleanup_timer = QtCore.QTimer()\n\
+      \        self.cleanup_timer.timeout.connect(self.hide_ghost_window)\n      \
+      \  self.cleanup_timer.start(200)\n\n    def hide_ghost_window(self):\n     \
+      \   for w in QtWidgets.QApplication.topLevelWidgets():\n            if isinstance(w,\
+      \ QtWidgets.QMainWindow) and w != self.gui: w.hide()\n        self.cleanup_timer.stop()\n\
+      \n    def process_user_input(self, dst_hex, text, priority):\n        \"\"\"\
+      \ Include Priority in the Message Metadata \"\"\"\n        try:\n          \
+      \  src_val = int(self.node_id_hex, 16)\n            dst_val = int(dst_hex, 16)\n\
+      \            \n            # 1. Address PDU\n            addr_list = [dst_val,\
+      \ src_val]\n            self.message_port_pub(pmt.intern(\"addr_out\"), pmt.cons(pmt.make_dict(),\
+      \ pmt.init_u8vector(2, addr_list)))\n            \n            # 2. Message\
+      \ PDU with Metadata\n            msg_bytes = [x for x in text.encode('utf-8')]\n\
+      \            \n            # Create Metadata Dictionary: {'priority': priority}\n\
+      \            meta = pmt.make_dict()\n            meta = pmt.dict_add(meta, pmt.intern(\"\
+      priority\"), pmt.from_long(int(priority)))\n            \n            pmt_msg\
+      \ = pmt.cons(meta, pmt.init_u8vector(len(msg_bytes), msg_bytes))\n         \
+      \   self.message_port_pub(pmt.intern(\"msg_out\"), pmt_msg)\n            return\
+      \ True\n        except ValueError:\n            return False\n\n    def handle_msg_in(self,\
+      \ pdu):\n        try:\n            payload = bytes(pmt.to_python(pmt.cdr(pdu)))\n\
+      \            if len(payload) == 0: return\n            msg_str = payload.decode('utf-8',\
+      \ errors='ignore')\n            if len(msg_str.strip()) == 0: return\n\n   \
+      \         meta = pmt.to_python(pmt.car(pdu))\n            source_id = \"UNKNOWN\"\
+      \n            if isinstance(meta, dict) and 'src_id' in meta:\n            \
+      \    source_id = f\"{meta['src_id']:02X}\"\n            \n            self.gui.signal_rx_msg.emit(source_id,\
+      \ msg_str)\n        except Exception: pass\n\n    def handle_feedback(self,\
+      \ pdu):\n        try:\n            status = pmt.symbol_to_string(pmt.cdr(pdu))\n\
+      \            self.gui.signal_ack.emit(\"ACK\" in status)\n        except: self.gui.signal_ack.emit(False)\n\
+      \nclass EchoWaveWindow(QtWidgets.QWidget):\n    signal_rx_msg = QtCore.pyqtSignal(str,\
+      \ str)\n    signal_ack = QtCore.pyqtSignal(bool)\n\n    def __init__(self, block_ref,\
+      \ win_title, my_fixed_id):\n        super().__init__()\n        self.block =\
+      \ block_ref\n        self.history = {} \n        self.current_chat_id = None\
+      \ \n        self.win_title = win_title\n        self.my_id = my_fixed_id\n \
+      \       \n        self.signal_rx_msg.connect(self.on_receive_message)\n    \
+      \    self.signal_ack.connect(self.on_ack_received)\n        self.init_ui()\n\
+      \n    def init_ui(self):\n        self.setWindowTitle(f\"EchoWave - {self.win_title}\"\
+      )\n        self.resize(950, 650)\n        self.setStyleSheet(\"font-family:\
+      \ Segoe UI, Arial; font-size: 14px;\")\n        \n        main_layout = QtWidgets.QHBoxLayout(self)\n\
+      \        main_layout.setContentsMargins(0,0,0,0); main_layout.setSpacing(0)\n\
+      \n        # === SIDEBAR ===\n        sidebar = QtWidgets.QWidget()\n       \
+      \ sidebar.setFixedWidth(280)\n        sidebar.setStyleSheet(\"background-color:\
+      \ #111b21; color: #e9edef; border-right: 1px solid #333;\")\n        sidebar_layout\
+      \ = QtWidgets.QVBoxLayout(sidebar)\n        \n        brand = QtWidgets.QLabel(\"\
+      EchoWave\")\n        brand.setStyleSheet(\"font-size: 24px; font-weight: bold;\
+      \ color: #00a884; margin: 15px 0;\")\n        sidebar_layout.addWidget(brand)\n\
+      \n        conn_group = QtWidgets.QGroupBox(\"CONFIGURATION\")\n        conn_group.setStyleSheet(\"\
+      QGroupBox { border: 1px solid #333; margin-top: 10px; padding-top: 10px; font-weight:\
+      \ bold; color: #8696a0; }\")\n        conn_layout = QtWidgets.QVBoxLayout(conn_group)\n\
+      \        \n        # ID Display\n        row1 = QtWidgets.QHBoxLayout()\n  \
+      \      row1.addWidget(QtWidgets.QLabel(\"MY ID:\"))\n        lbl = QtWidgets.QLabel(self.my_id)\n\
+      \        lbl.setStyleSheet(\"font-weight: bold; color: #00a884; font-size: 16px;\"\
+      )\n        row1.addWidget(lbl)\n        conn_layout.addLayout(row1)\n\n    \
+      \    # Target Input\n        row2 = QtWidgets.QHBoxLayout()\n        row2.addWidget(QtWidgets.QLabel(\"\
+      TO ID:\"))\n        self.dst_addr_input = QtWidgets.QLineEdit()\n        self.dst_addr_input.setMaxLength(2)\n\
+      \        self.dst_addr_input.setPlaceholderText(\"Hex\")\n        self.dst_addr_input.setStyleSheet(\"\
+      background: #2a3942; color: white; border: none; padding: 5px;\")\n        row2.addWidget(self.dst_addr_input)\n\
+      \        conn_layout.addLayout(row2)\n\n        # Priority Input\n        row3\
+      \ = QtWidgets.QHBoxLayout()\n        row3.addWidget(QtWidgets.QLabel(\"PRIO\
+      \ (0-10):\"))\n        self.prio_input = QtWidgets.QSpinBox()\n        self.prio_input.setRange(0,\
+      \ 10)\n        self.prio_input.setValue(5) # Default priority\n        self.prio_input.setStyleSheet(\"\
+      background: #2a3942; color: white; border: none; padding: 5px;\")\n        row3.addWidget(self.prio_input)\n\
+      \        conn_layout.addLayout(row3)\n\n        self.connect_btn = QtWidgets.QPushButton(\"\
+      INIT LINK\")\n        self.connect_btn.setStyleSheet(\"background-color: #00a884;\
+      \ color: white; border-radius: 5px; padding: 8px; font-weight: bold;\")\n  \
+      \      self.connect_btn.clicked.connect(self.manual_connect)\n        conn_layout.addWidget(self.connect_btn)\n\
+      \        \n        sidebar_layout.addWidget(conn_group)\n        sidebar_layout.addWidget(QtWidgets.QLabel(\"\
+      Active Feeds:\"))\n        self.contact_list = QtWidgets.QListWidget()\n   \
+      \     self.contact_list.setStyleSheet(\"background-color: transparent; border:\
+      \ none; color: #d1d7db;\")\n        self.contact_list.itemClicked.connect(self.switch_conversation_from_list)\n\
+      \        sidebar_layout.addWidget(self.contact_list)\n\n        # === RIGHT\
+      \ PANEL ===\n        right_panel = QtWidgets.QWidget()\n        right_panel.setStyleSheet(\"\
+      background-color: #0b141a;\") \n        right_layout = QtWidgets.QVBoxLayout(right_panel)\n\
+      \        right_layout.setContentsMargins(0,0,0,0)\n\n        # Header\n    \
+      \    header = QtWidgets.QWidget()\n        header.setStyleSheet(\"background-color:\
+      \ #202c33; padding: 10px;\")\n        header.setFixedHeight(60)\n        h_layout\
+      \ = QtWidgets.QHBoxLayout(header)\n        self.chat_title = QtWidgets.QLabel(\"\
+      Select a Link\")\n        self.chat_title.setStyleSheet(\"font-size: 16px; font-weight:\
+      \ bold; color: white; background: transparent;\")\n        self.clear_btn =\
+      \ QtWidgets.QPushButton(\"Clear\")\n        self.clear_btn.setStyleSheet(\"\
+      color: #ef5350; background: transparent; border: 1px solid #ef5350;\")\n   \
+      \     self.clear_btn.clicked.connect(self.clear_current_history)\n        h_layout.addWidget(self.chat_title);\
+      \ h_layout.addStretch(); h_layout.addWidget(self.clear_btn)\n\n        # Chat\
+      \ Area\n        self.scroll_area = QtWidgets.QScrollArea()\n        self.scroll_area.setWidgetResizable(True)\n\
+      \        self.scroll_area.setStyleSheet(\"border: none; background: transparent;\"\
+      )\n        self.chat_container = QtWidgets.QWidget()\n        self.chat_layout\
+      \ = QtWidgets.QVBoxLayout(self.chat_container)\n        self.chat_layout.addStretch()\n\
+      \        self.scroll_area.setWidget(self.chat_container)\n\n        # Input\
+      \ Area\n        self.footer = QtWidgets.QWidget()\n        self.footer.setStyleSheet(\"\
+      background-color: #202c33; padding: 10px;\")\n        self.footer.setVisible(False)\n\
+      \        f_layout = QtWidgets.QHBoxLayout(self.footer)\n        self.msg_input\
+      \ = QtWidgets.QLineEdit()\n        self.msg_input.setPlaceholderText(\"Type\
+      \ a message\")\n        self.msg_input.setStyleSheet(\"background-color: #2a3942;\
+      \ color: white; border: none; padding: 12px; border-radius: 8px;\")\n      \
+      \  self.msg_input.returnPressed.connect(self.send_message)\n        self.send_btn\
+      \ = QtWidgets.QPushButton(\"\u27A4\")\n        self.send_btn.setFixedSize(45,\
+      \ 40)\n        self.send_btn.setStyleSheet(\"background-color: #00a884; color:\
+      \ white; border-radius: 8px; font-size: 18px;\")\n        self.send_btn.clicked.connect(self.send_message)\n\
+      \        f_layout.addWidget(self.msg_input); f_layout.addWidget(self.send_btn)\n\
+      \n        right_layout.addWidget(header); right_layout.addWidget(self.scroll_area);\
+      \ right_layout.addWidget(self.footer)\n        main_layout.addWidget(sidebar);\
+      \ main_layout.addWidget(right_panel)\n\n    def manual_connect(self):\n    \
+      \    target = self.dst_addr_input.text().strip().upper()\n        if len(target)\
+      \ > 0:\n            if len(target) > 2: target = target[:2]\n            self.open_conversation(target)\n\
+      \n    def open_conversation(self, target_id):\n        self.current_chat_id\
+      \ = target_id\n        self.chat_title.setText(f\"Feed: {target_id}\")\n   \
+      \     self.footer.setVisible(True)\n        self.ensure_contact_exists(target_id)\n\
+      \        self.render_history(target_id)\n\n    def ensure_contact_exists(self,\
+      \ addr):\n        items = [self.contact_list.item(i).text() for i in range(self.contact_list.count())]\n\
+      \        if addr not in items: self.contact_list.addItem(addr)\n\n    def switch_conversation_from_list(self,\
+      \ item):\n        self.dst_addr_input.setText(item.text())\n        self.open_conversation(item.text())\n\
+      \n    def clear_current_history(self):\n        if self.current_chat_id:\n \
+      \           self.history[self.current_chat_id] = []\n            self.render_history(self.current_chat_id)\n\
+      \n    def render_history(self, chat_id):\n        while self.chat_layout.count()\
+      \ > 1:\n            item = self.chat_layout.takeAt(1)\n            if item.widget():\
+      \ item.widget().deleteLater()\n        msgs = self.history.get(chat_id, [])\n\
+      \        for m in msgs: self.add_bubble(m['text'], m['is_sender'], m['time'],\
+      \ m['status'], m.get('prio', 10))\n\n    def save_to_history(self, chat_id,\
+      \ text, is_sender, status=\"\", prio=10):\n        if chat_id not in self.history:\
+      \ self.history[chat_id] = []\n        entry = {'text': text, 'is_sender': is_sender,\
+      \ 'time': datetime.datetime.now().strftime(\"%H:%M\"), 'status': status, 'prio':\
+      \ prio}\n        self.history[chat_id].append(entry)\n\n    def send_message(self):\n\
+      \        text = self.msg_input.text().strip()\n        dst = self.current_chat_id\
+      \ \n        prio = self.prio_input.value()\n        if not text or not dst:\
+      \ return\n\n        if self.block.process_user_input(dst, text, prio):\n   \
+      \         self.save_to_history(dst, text, True, \"pending\", prio)\n       \
+      \     self.add_bubble(text, True, datetime.datetime.now().strftime(\"%H:%M\"\
+      ), \"pending\", prio)\n            self.msg_input.clear()\n\n    def on_receive_message(self,\
+      \ source, msg):\n        self.save_to_history(source, msg, False)\n        self.ensure_contact_exists(source)\n\
+      \        if source == self.current_chat_id:\n            self.add_bubble(msg,\
+      \ False, datetime.datetime.now().strftime(\"%H:%M\"), \"\", 10)\n\n    def on_ack_received(self,\
+      \ success):\n        if self.current_chat_id in self.history:\n            chat_log\
+      \ = self.history[self.current_chat_id]\n            for i in range(len(chat_log)-1,\
+      \ -1, -1):\n                if chat_log[i]['is_sender'] and chat_log[i]['status']\
+      \ == \"pending\":\n                    chat_log[i]['status'] = \"success\" if\
+      \ success else \"fail\"\n                    self.render_history(self.current_chat_id)\n\
+      \                    break\n\n    def add_bubble(self, text, is_sender, time,\
+      \ status, prio):\n        row = QtWidgets.QWidget(); row.setStyleSheet(\"background:\
+      \ transparent;\")\n        layout = QtWidgets.QHBoxLayout(row)\n        bubble\
+      \ = QtWidgets.QFrame()\n        b_layout = QtWidgets.QVBoxLayout(bubble)\n \
+      \       \n        if is_sender:\n            bubble.setStyleSheet(\"background-color:\
+      \ #005c4b; border-radius: 10px; margin-left: 50px;\")\n            layout.addStretch();\
+      \ layout.addWidget(bubble)\n        else:\n            bubble.setStyleSheet(\"\
+      background-color: #202c33; border-radius: 10px; margin-right: 50px;\")\n   \
+      \         layout.addWidget(bubble); layout.addStretch()\n            \n    \
+      \    lbl = QtWidgets.QLabel(f\"[{prio}] {text}\") if is_sender else QtWidgets.QLabel(text)\n\
+      \        lbl.setWordWrap(True)\n        lbl.setStyleSheet(\"color: #e9edef;\
+      \ font-size: 14px; background: transparent; border: none;\")\n        b_layout.addWidget(lbl)\n\
+      \        \n        meta = QtWidgets.QHBoxLayout(); meta.addStretch()\n     \
+      \   t_lbl = QtWidgets.QLabel(time)\n        t_lbl.setStyleSheet(\"color: #8696a0;\
+      \ font-size: 11px; background: transparent; border: none;\")\n        meta.addWidget(t_lbl)\n\
+      \        \n        if is_sender:\n            icon = \"\U0001F552\"\n      \
+      \      color = \"#8696a0\"\n            if status == \"success\": icon = \"\u2713\
+      \u2713\"; color = \"#53bdeb\"\n            elif status == \"fail\": icon = \"\
+      !\"; color = \"red\"\n            s_lbl = QtWidgets.QLabel(icon)\n         \
+      \   s_lbl.setStyleSheet(f\"color: {color}; font-size: 11px; font-weight: bold;\
+      \ background: transparent; border: none;\")\n            meta.addWidget(s_lbl)\n\
+      \            \n        b_layout.addLayout(meta)\n        self.chat_layout.addWidget(row)\n\
+      \        QtCore.QTimer.singleShot(10, lambda: self.scroll_area.verticalScrollBar().setValue(self.scroll_area.verticalScrollBar().maximum()))\n"
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    node_id_hex: sender_addr
+  states:
+    _io_cache: ('EchoWave Core', 'blk', [('node_id_hex', "'A1'")], [('msg_in', 'message',
+      1), ('feedback_in', 'message', 1)], [('msg_out', 'message', 1), ('addr_out',
+      'message', 1)], '', ['node_id_hex'])
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [664, 1664.0]
+    rotation: 0
+    state: enabled
+- name: epy_block_2_0
+  id: epy_block
+  parameters:
+    _source_code: "\"\"\"\nEmbedded Python Block: PDU Scrambler / Descrambler (Additive)\n\
+      \"\"\"\n\nimport numpy as np\nfrom gnuradio import gr\nimport pmt\n\nclass blk(gr.basic_block):\n\
+      \    def __init__(self, seed=0xCAFE, max_len=4096):\n        \"\"\"\n      \
+      \  Constructor.\n        Args:\n            seed: A fixed integer to seed the\
+      \ random number generator. \n                  MUST BE THE SAME on Tx and Rx.\n\
+      \            max_len: The maximum packet length we expect to scramble.\n   \
+      \     \"\"\"\n        gr.basic_block.__init__(\n            self,\n        \
+      \    name='PDU Scrambler',\n            in_sig=None,\n            out_sig=None\n\
+      \        )\n        self.seed = seed\n        self.max_len = max_len\n     \
+      \   \n        # Pre-calculate the scrambling mask during initialization.\n \
+      \       # This ensures high performance during runtime.\n        # We use a\
+      \ fixed seed so the sequence is always identical.\n        rng = np.random.default_rng(self.seed)\n\
+      \        self.scramble_mask = rng.integers(0, 256, self.max_len, dtype=np.uint8)\n\
+      \n        # Register message ports\n        self.message_port_register_in(pmt.intern('pdu_in'))\n\
+      \        self.message_port_register_out(pmt.intern('pdu_out'))\n        self.set_msg_handler(pmt.intern('pdu_in'),\
+      \ self.handle_msg)\n\n    def handle_msg(self, msg):\n        \"\"\"\n     \
+      \   XOR the input payload with the pre-generated mask.\n        \"\"\"\n   \
+      \     if not pmt.is_pair(msg):\n            return\n\n        # 1. Extract Metadata\
+      \ and Data\n        meta = pmt.car(msg)\n        data_pmt = pmt.cdr(msg)\n \
+      \       \n        try:\n            input_data = np.array(pmt.u8vector_elements(data_pmt),\
+      \ dtype=np.uint8)\n        except:\n            return\n\n        # 2. Safety\
+      \ Check on Length\n        length = len(input_data)\n        if length > self.max_len:\n\
+      \            # If packet is too big for our mask, resize mask (slow, but safe)\n\
+      \            # In a real deployed system, you might just drop it or expand the\
+      \ init max_len\n            rng = np.random.default_rng(self.seed)\n       \
+      \     self.scramble_mask = rng.integers(0, 256, length, dtype=np.uint8)\n  \
+      \          self.max_len = length\n\n        # 3. Perform XOR Scrambling (Whitening)\n\
+      \        # We take the first 'length' bytes of our pre-calculated mask\n   \
+      \     scrambled_data = np.bitwise_xor(input_data, self.scramble_mask[:length])\n\
+      \n        # 4. Output\n        out_vector = pmt.init_u8vector(length, scrambled_data)\n\
+      \        self.message_port_pub(pmt.intern('pdu_out'), pmt.cons(meta, out_vector))\n"
+    affinity: ''
+    alias: ''
+    comment: ''
+    max_len: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    seed: ''
+  states:
+    _io_cache: '(''PDU Scrambler'', ''blk'', [(''seed'', ''51966''), (''max_len'',
+      ''4096'')], [(''pdu_in'', ''message'', 1)], [(''pdu_out'', ''message'', 1)],
+      ''\n        Constructor.\n        Args:\n            seed: A fixed integer to
+      seed the random number generator. \n                  MUST BE THE SAME on Tx
+      and Rx.\n            max_len: The maximum packet length we expect to scramble.\n        '',
+      [''max_len'', ''seed''])'
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [2632, 1120.0]
+    rotation: 0
+    state: bypassed
+- name: epy_block_2_0_0
+  id: epy_block
+  parameters:
+    _source_code: "\"\"\"\nEmbedded Python Block: PDU Scrambler / Descrambler (Additive)\n\
+      \"\"\"\n\nimport numpy as np\nfrom gnuradio import gr\nimport pmt\n\nclass blk(gr.basic_block):\n\
+      \    def __init__(self, seed=0xCAFE, max_len=4096):\n        \"\"\"\n      \
+      \  Constructor.\n        Args:\n            seed: A fixed integer to seed the\
+      \ random number generator. \n                  MUST BE THE SAME on Tx and Rx.\n\
+      \            max_len: The maximum packet length we expect to scramble.\n   \
+      \     \"\"\"\n        gr.basic_block.__init__(\n            self,\n        \
+      \    name='PDU Scrambler',\n            in_sig=None,\n            out_sig=None\n\
+      \        )\n        self.seed = seed\n        self.max_len = max_len\n     \
+      \   \n        # Pre-calculate the scrambling mask during initialization.\n \
+      \       # This ensures high performance during runtime.\n        # We use a\
+      \ fixed seed so the sequence is always identical.\n        rng = np.random.default_rng(self.seed)\n\
+      \        self.scramble_mask = rng.integers(0, 256, self.max_len, dtype=np.uint8)\n\
+      \n        # Register message ports\n        self.message_port_register_in(pmt.intern('pdu_in'))\n\
+      \        self.message_port_register_out(pmt.intern('pdu_out'))\n        self.set_msg_handler(pmt.intern('pdu_in'),\
+      \ self.handle_msg)\n\n    def handle_msg(self, msg):\n        \"\"\"\n     \
+      \   XOR the input payload with the pre-generated mask.\n        \"\"\"\n   \
+      \     if not pmt.is_pair(msg):\n            return\n\n        # 1. Extract Metadata\
+      \ and Data\n        meta = pmt.car(msg)\n        data_pmt = pmt.cdr(msg)\n \
+      \       \n        try:\n            input_data = np.array(pmt.u8vector_elements(data_pmt),\
+      \ dtype=np.uint8)\n        except:\n            return\n\n        # 2. Safety\
+      \ Check on Length\n        length = len(input_data)\n        if length > self.max_len:\n\
+      \            # If packet is too big for our mask, resize mask (slow, but safe)\n\
+      \            # In a real deployed system, you might just drop it or expand the\
+      \ init max_len\n            rng = np.random.default_rng(self.seed)\n       \
+      \     self.scramble_mask = rng.integers(0, 256, length, dtype=np.uint8)\n  \
+      \          self.max_len = length\n\n        # 3. Perform XOR Scrambling (Whitening)\n\
+      \        # We take the first 'length' bytes of our pre-calculated mask\n   \
+      \     scrambled_data = np.bitwise_xor(input_data, self.scramble_mask[:length])\n\
+      \n        # 4. Output\n        out_vector = pmt.init_u8vector(length, scrambled_data)\n\
+      \        self.message_port_pub(pmt.intern('pdu_out'), pmt.cons(meta, out_vector))\n"
+    affinity: ''
+    alias: ''
+    comment: ''
+    max_len: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    seed: ''
+  states:
+    _io_cache: '(''PDU Scrambler'', ''blk'', [(''seed'', ''51966''), (''max_len'',
+      ''4096'')], [(''pdu_in'', ''message'', 1)], [(''pdu_out'', ''message'', 1)],
+      ''\n        Constructor.\n        Args:\n            seed: A fixed integer to
+      seed the random number generator. \n                  MUST BE THE SAME on Tx
+      and Rx.\n            max_len: The maximum packet length we expect to scramble.\n        '',
+      [''max_len'', ''seed''])'
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [2584, 256.0]
+    rotation: 0
+    state: bypassed
+- name: epy_block_3
+  id: epy_block
+  parameters:
+    _source_code: "\"\"\"\nEmbedded Python Block: PDU Prepend Dummy Bytes\n\"\"\"\n\
+      \nimport numpy as np\nfrom gnuradio import gr\nimport pmt\n\nclass blk(gr.basic_block):\n\
+      \    def __init__(self, num_dummy_bytes=64):  # Default to 64 bytes\n      \
+      \  \"\"\"\n        Constructor.\n        Args:\n            num_dummy_bytes:\
+      \ The number of random bytes to prepend.\n        \"\"\"\n        gr.basic_block.__init__(\n\
+      \            self,\n            name='PDU Prepend Dummy Bytes',\n          \
+      \  in_sig=None,\n            out_sig=None\n        )\n        \n        # Save\
+      \ the parameter\n        self.num_dummy_bytes = num_dummy_bytes\n\n        #\
+      \ Register message ports for PDU handling\n        self.message_port_register_in(pmt.intern('pdu_in'))\n\
+      \        self.message_port_register_out(pmt.intern('pdu_out'))\n        \n \
+      \       # Set up the message handler\n        self.set_msg_handler(pmt.intern('pdu_in'),\
+      \ self.handle_msg)\n\n    def handle_msg(self, msg):\n        \"\"\"\n     \
+      \   Message handler that processes incoming PDUs.\n        \"\"\"\n        #\
+      \ 1. Validate that the message is a PDU (it should be a pair: meta + data)\n\
+      \        if not pmt.is_pair(msg):\n            return\n\n        # 2. Extract\
+      \ metadata and data vector\n        meta = pmt.car(msg)\n        data_pmt =\
+      \ pmt.cdr(msg)\n        \n        # Convert PMT vector to a numpy array (uint8)\n\
+      \        # We rely on pmt.u8vector_elements to get the data out\n        try:\n\
+      \            input_data = pmt.u8vector_elements(data_pmt)\n        except:\n\
+      \            # If data is not a u8vector, ignore or print error\n          \
+      \  return\n\n        # 3. Generate dummy bytes for QPSK Costas Loop Sync\n \
+      \       # We use random integers between 0 and 255.\n        # Random data ensures\
+      \ White Noise properties, meaning we have an equal \n        # probability of\
+      \ generating 00, 01, 10, and 11 bit pairs.\n        # This guarantees that the\
+      \ transitions hit all 4 points of the QPSK \n        # constellation (1+j, 1-j,\
+      \ -1+j, -1-j) to energize the loop.\n        dummy_data = np.random.randint(0,\
+      \ 256, self.num_dummy_bytes, dtype=np.uint8)\n        \n        # 4. Concatenate\
+      \ the dummy bytes with the input data\n        # input_data comes out as a tuple\
+      \ or list from pmt, convert to array first\n        combined_data = np.concatenate((dummy_data,\
+      \ np.array(input_data, dtype=np.uint8)))\n\n        # 5. Create new output PMT\n\
+      \        # We keep the original metadata (meta)\n        out_len = len(combined_data)\n\
+      \        out_vector = pmt.init_u8vector(out_len, combined_data)\n        out_msg\
+      \ = pmt.cons(meta, out_vector)\n\n        # 6. Publish the message to the output\
+      \ port\n        self.message_port_pub(pmt.intern('pdu_out'), out_msg)\n"
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    num_dummy_bytes: '100'
+  states:
+    _io_cache: '(''PDU Prepend Dummy Bytes'', ''blk'', [(''num_dummy_bytes'', ''64'')],
+      [(''pdu_in'', ''message'', 1)], [(''pdu_out'', ''message'', 1)], ''\n        Constructor.\n        Args:\n            num_dummy_bytes:
+      The number of random bytes to prepend.\n        '', [''num_dummy_bytes''])'
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [2104, 712.0]
+    rotation: 0
+    state: enabled
+- name: epy_block_3_0
+  id: epy_block
+  parameters:
+    _source_code: "\"\"\"\nEmbedded Python Block: PDU Prepend Dummy Bytes\n\"\"\"\n\
+      \nimport numpy as np\nfrom gnuradio import gr\nimport pmt\n\nclass blk(gr.basic_block):\n\
+      \    def __init__(self, num_dummy_bytes=64):  # Default to 64 bytes\n      \
+      \  \"\"\"\n        Constructor.\n        Args:\n            num_dummy_bytes:\
+      \ The number of random bytes to prepend.\n        \"\"\"\n        gr.basic_block.__init__(\n\
+      \            self,\n            name='PDU Prepend Dummy Bytes',\n          \
+      \  in_sig=None,\n            out_sig=None\n        )\n        \n        # Save\
+      \ the parameter\n        self.num_dummy_bytes = num_dummy_bytes\n\n        #\
+      \ Register message ports for PDU handling\n        self.message_port_register_in(pmt.intern('pdu_in'))\n\
+      \        self.message_port_register_out(pmt.intern('pdu_out'))\n        \n \
+      \       # Set up the message handler\n        self.set_msg_handler(pmt.intern('pdu_in'),\
+      \ self.handle_msg)\n\n    def handle_msg(self, msg):\n        \"\"\"\n     \
+      \   Message handler that processes incoming PDUs.\n        \"\"\"\n        #\
+      \ 1. Validate that the message is a PDU (it should be a pair: meta + data)\n\
+      \        if not pmt.is_pair(msg):\n            return\n\n        # 2. Extract\
+      \ metadata and data vector\n        meta = pmt.car(msg)\n        data_pmt =\
+      \ pmt.cdr(msg)\n        \n        # Convert PMT vector to a numpy array (uint8)\n\
+      \        # We rely on pmt.u8vector_elements to get the data out\n        try:\n\
+      \            input_data = pmt.u8vector_elements(data_pmt)\n        except:\n\
+      \            # If data is not a u8vector, ignore or print error\n          \
+      \  return\n\n        # 3. Generate dummy bytes for QPSK Costas Loop Sync\n \
+      \       # We use random integers between 0 and 255.\n        # Random data ensures\
+      \ White Noise properties, meaning we have an equal \n        # probability of\
+      \ generating 00, 01, 10, and 11 bit pairs.\n        # This guarantees that the\
+      \ transitions hit all 4 points of the QPSK \n        # constellation (1+j, 1-j,\
+      \ -1+j, -1-j) to energize the loop.\n        dummy_data = np.random.randint(0,\
+      \ 256, self.num_dummy_bytes, dtype=np.uint8)\n        \n        # 4. Concatenate\
+      \ the dummy bytes with the input data\n        # input_data comes out as a tuple\
+      \ or list from pmt, convert to array first\n        combined_data = np.concatenate((dummy_data,\
+      \ np.array(input_data, dtype=np.uint8)))\n\n        # 5. Create new output PMT\n\
+      \        # We keep the original metadata (meta)\n        out_len = len(combined_data)\n\
+      \        out_vector = pmt.init_u8vector(out_len, combined_data)\n        out_msg\
+      \ = pmt.cons(meta, out_vector)\n\n        # 6. Publish the message to the output\
+      \ port\n        self.message_port_pub(pmt.intern('pdu_out'), out_msg)\n"
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    num_dummy_bytes: '100'
+  states:
+    _io_cache: '(''PDU Prepend Dummy Bytes'', ''blk'', [(''num_dummy_bytes'', ''64'')],
+      [(''pdu_in'', ''message'', 1)], [(''pdu_out'', ''message'', 1)], ''\n        Constructor.\n        Args:\n            num_dummy_bytes:
+      The number of random bytes to prepend.\n        '', [''num_dummy_bytes''])'
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [2440, 1640.0]
+    rotation: 0
+    state: enabled
+- name: epy_block_4
+  id: epy_block
+  parameters:
+    _source_code: "\"\"\"\nEmbedded Python Block: Receiver (Reads Length + Sends Priority\
+      \ 0 ACKs)\n\"\"\"\nimport numpy as np\nfrom gnuradio import gr\nimport pmt\n\
+      import struct\n\nclass blk(gr.basic_block):\n    def __init__(self, my_addr_hex='A1'):\n\
+      \        gr.basic_block.__init__(self, name='Receiver / ACK Generator', in_sig=None,\
+      \ out_sig=None)\n        \n        try:\n            self.my_addr = int(my_addr_hex,\
+      \ 16)\n        except ValueError:\n            self.my_addr = 0xA1\n       \
+      \ \n        self.reassembly_buffer = {}\n        self.expected_seq = {} \n\n\
+      \        self.message_port_register_in(pmt.intern('pdu_in'))\n        self.message_port_register_out(pmt.intern('msg_out'))\n\
+      \        self.message_port_register_out(pmt.intern('ack_out'))\n        self.message_port_register_out(pmt.intern('ack_reply_out'))\n\
+      \        self.set_msg_handler(pmt.intern('pdu_in'), self.handle_msg)\n\n   \
+      \ def handle_msg(self, msg):\n        if not pmt.is_pair(msg): return\n    \
+      \    full_packet = list(pmt.u8vector_elements(pmt.cdr(msg)))\n        \n   \
+      \     # Header is 7 bytes >BBBHBB\n        if len(full_packet) < 7: return \n\
+      \n        try:\n            # Unpack 7 bytes: Dest, Src, Flag, Seq, Fin, LEN\n\
+      \            dest, src, flag, seq, fin, data_len = struct.unpack('>BBBHBB',\
+      \ bytes(full_packet[:7]))\n            \n            # === LEN FIX ===\n   \
+      \         # Only read 'data_len' bytes. Ignore padding.\n            end_idx\
+      \ = 7 + data_len\n            if end_idx > len(full_packet): end_idx = len(full_packet)\n\
+      \            \n            payload = full_packet[7 : end_idx]\n        except:\n\
+      \            return \n\n        if dest != self.my_addr: return\n\n        #\
+      \ If it's an ACK Packet (Flag=1)\n        if flag == 1:\n            self.message_port_pub(pmt.intern('ack_out'),\
+      \ msg)\n            return\n\n        # If it's a Data Packet\n        if src\
+      \ not in self.expected_seq:\n            self.expected_seq[src] = seq \n   \
+      \         self.reassembly_buffer[src] = []\n\n        expected = self.expected_seq[src]\n\
+      \n        if seq == expected:\n            self.reassembly_buffer[src].append(bytes(payload))\n\
+      \            self.expected_seq[src] = (expected + 1) & 0xFFFF\n            self.send_ack(src,\
+      \ self.expected_seq[src])\n            \n            if fin == 1:\n        \
+      \        self.push_to_gui(src)\n                \n        elif seq < expected:\n\
+      \            # Duplicate packet received, re-send ACK for what we actually need\n\
+      \            self.send_ack(src, expected)\n\n    def send_ack(self, target_node,\
+      \ next_required_seq):\n        # Header: Dest, Src, Flag=1, Seq, FIN=0, Len=0\n\
+      \        header = struct.pack('>BBBHBB', target_node, self.my_addr, 1, next_required_seq,\
+      \ 0, 0)\n        \n        # === PRIORITY 0 ===\n        # ACKs must jump the\
+      \ queue in the Arbiter\n        meta = pmt.make_dict()\n        meta = pmt.dict_add(meta,\
+      \ pmt.intern(\"priority\"), pmt.from_long(0))\n        \n        out_pmt = pmt.cons(meta,\
+      \ pmt.init_u8vector(len(header), list(header)))\n        self.message_port_pub(pmt.intern('ack_reply_out'),\
+      \ out_pmt)\n\n    def push_to_gui(self, src):\n        try:\n            full_msg_bytes\
+      \ = b''.join(self.reassembly_buffer[src])\n            clean_bytes = list(full_msg_bytes)\n\
+      \            \n            meta = pmt.make_dict()\n            meta = pmt.dict_add(meta,\
+      \ pmt.intern(\"src_id\"), pmt.from_long(src))\n            \n            out_pmt\
+      \ = pmt.cons(meta, pmt.init_u8vector(len(clean_bytes), clean_bytes))\n     \
+      \       self.message_port_pub(pmt.intern('msg_out'), out_pmt)\n            \n\
+      \            self.reassembly_buffer[src] = []\n        except: pass\n"
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    my_addr_hex: sender_addr
+  states:
+    _io_cache: ('Receiver / ACK Generator', 'blk', [('my_addr_hex', "'A1'")], [('pdu_in',
+      'message', 1)], [('ack_reply_out', 'message', 1), ('ack_out', 'message', 1),
+      ('msg_out', 'message', 1)], '', [])
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [296, 1552.0]
+    rotation: 0
+    state: enabled
+- name: epy_block_4_0
+  id: epy_block
+  parameters:
+    _source_code: "\"\"\"\nEmbedded Python Block: Receiver (Reads Length + Sends Priority\
+      \ 0 ACKs)\n\"\"\"\nimport numpy as np\nfrom gnuradio import gr\nimport pmt\n\
+      import struct\n\nclass blk(gr.basic_block):\n    def __init__(self, my_addr_hex='A1'):\n\
+      \        gr.basic_block.__init__(self, name='Receiver / ACK Generator', in_sig=None,\
+      \ out_sig=None)\n        \n        try:\n            self.my_addr = int(my_addr_hex,\
+      \ 16)\n        except ValueError:\n            self.my_addr = 0xA1\n       \
+      \ \n        self.reassembly_buffer = {}\n        self.expected_seq = {} \n\n\
+      \        self.message_port_register_in(pmt.intern('pdu_in'))\n        self.message_port_register_out(pmt.intern('msg_out'))\n\
+      \        self.message_port_register_out(pmt.intern('ack_out'))\n        self.message_port_register_out(pmt.intern('ack_reply_out'))\n\
+      \        self.set_msg_handler(pmt.intern('pdu_in'), self.handle_msg)\n\n   \
+      \ def handle_msg(self, msg):\n        if not pmt.is_pair(msg): return\n    \
+      \    full_packet = list(pmt.u8vector_elements(pmt.cdr(msg)))\n        \n   \
+      \     # Header is 7 bytes >BBBHBB\n        if len(full_packet) < 7: return \n\
+      \n        try:\n            # Unpack 7 bytes: Dest, Src, Flag, Seq, Fin, LEN\n\
+      \            dest, src, flag, seq, fin, data_len = struct.unpack('>BBBHBB',\
+      \ bytes(full_packet[:7]))\n            \n            # === LEN FIX ===\n   \
+      \         # Only read 'data_len' bytes. Ignore padding.\n            end_idx\
+      \ = 7 + data_len\n            if end_idx > len(full_packet): end_idx = len(full_packet)\n\
+      \            \n            payload = full_packet[7 : end_idx]\n        except:\n\
+      \            return \n\n        if dest != self.my_addr: return\n\n        #\
+      \ If it's an ACK Packet (Flag=1)\n        if flag == 1:\n            self.message_port_pub(pmt.intern('ack_out'),\
+      \ msg)\n            return\n\n        # If it's a Data Packet\n        if src\
+      \ not in self.expected_seq:\n            self.expected_seq[src] = seq \n   \
+      \         self.reassembly_buffer[src] = []\n\n        expected = self.expected_seq[src]\n\
+      \n        if seq == expected:\n            self.reassembly_buffer[src].append(bytes(payload))\n\
+      \            self.expected_seq[src] = (expected + 1) & 0xFFFF\n            self.send_ack(src,\
+      \ self.expected_seq[src])\n            \n            if fin == 1:\n        \
+      \        self.push_to_gui(src)\n                \n        elif seq < expected:\n\
+      \            # Duplicate packet received, re-send ACK for what we actually need\n\
+      \            self.send_ack(src, expected)\n\n    def send_ack(self, target_node,\
+      \ next_required_seq):\n        # Header: Dest, Src, Flag=1, Seq, FIN=0, Len=0\n\
+      \        header = struct.pack('>BBBHBB', target_node, self.my_addr, 1, next_required_seq,\
+      \ 0, 0)\n        \n        # === PRIORITY 0 ===\n        # ACKs must jump the\
+      \ queue in the Arbiter\n        meta = pmt.make_dict()\n        meta = pmt.dict_add(meta,\
+      \ pmt.intern(\"priority\"), pmt.from_long(0))\n        \n        out_pmt = pmt.cons(meta,\
+      \ pmt.init_u8vector(len(header), list(header)))\n        self.message_port_pub(pmt.intern('ack_reply_out'),\
+      \ out_pmt)\n\n    def push_to_gui(self, src):\n        try:\n            full_msg_bytes\
+      \ = b''.join(self.reassembly_buffer[src])\n            clean_bytes = list(full_msg_bytes)\n\
+      \            \n            meta = pmt.make_dict()\n            meta = pmt.dict_add(meta,\
+      \ pmt.intern(\"src_id\"), pmt.from_long(src))\n            \n            out_pmt\
+      \ = pmt.cons(meta, pmt.init_u8vector(len(clean_bytes), clean_bytes))\n     \
+      \       self.message_port_pub(pmt.intern('msg_out'), out_pmt)\n            \n\
+      \            self.reassembly_buffer[src] = []\n        except: pass\n"
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    my_addr_hex: my_addr
+  states:
+    _io_cache: ('Receiver / ACK Generator', 'blk', [('my_addr_hex', "'A1'")], [('pdu_in',
+      'message', 1)], [('ack_reply_out', 'message', 1), ('ack_out', 'message', 1),
+      ('msg_out', 'message', 1)], '', [])
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [144, 856.0]
+    rotation: 0
+    state: enabled
+- name: epy_block_5
+  id: epy_block
+  parameters:
+    _source_code: "\"\"\"\nEmbedded Python Block: MAC Priority Arbiter (Timer-Based\
+      \ Aging)\n\"\"\"\nimport numpy as np\nfrom gnuradio import gr\nimport pmt\n\
+      import threading\nimport time\n\nclass blk(gr.basic_block):\n    def __init__(self,\
+      \ aging_interval_ms=200):\n        \"\"\"\n        Args:\n            aging_interval_ms:\
+      \ How often (in ms) to boost the priority of waiting packets.\n            \
+      \                   Default 200ms means a packet drops from Priority 5 -> 4\
+      \ after 0.2s.\n        \"\"\"\n        gr.basic_block.__init__(self, name='MAC\
+      \ Arbiter (Timer Aging)', in_sig=None, out_sig=None)\n\n        self.aging_interval\
+      \ = aging_interval_ms / 1000.0\n        self.last_aging_time = time.time()\n\
+      \n        # Unified Queue. Stores dictionaries: {'msg': pmt_msg, 'prio': int}\n\
+      \        self.tx_queue = []\n\n        self.lock = threading.Lock()\n      \
+      \  self.stop_thread = False\n\n        self.message_port_register_in(pmt.intern('data_in'))\n\
+      \        self.message_port_register_in(pmt.intern('ack_in'))\n        self.message_port_register_out(pmt.intern('pdu_out'))\n\
+      \n        self.set_msg_handler(pmt.intern('data_in'), self.handle_data)\n  \
+      \      self.set_msg_handler(pmt.intern('ack_in'), self.handle_ack)\n\n     \
+      \   self.tx_thread = threading.Thread(target=self.run_tx_loop)\n        self.tx_thread.daemon\
+      \ = True\n        self.tx_thread.start()\n\n    def __del__(self):\n       \
+      \ self.stop_thread = True\n        if self.tx_thread.is_alive(): self.tx_thread.join()\n\
+      \n    def get_priority_from_msg(self, msg, default_val):\n        \"\"\" Extract\
+      \ 'priority' field from PMT Metadata \"\"\"\n        try:\n            meta\
+      \ = pmt.car(msg)\n            if pmt.is_dict(meta):\n                p_val =\
+      \ pmt.dict_ref(meta, pmt.intern(\"priority\"), pmt.PMT_NIL)\n              \
+      \  if not pmt.eq(p_val, pmt.PMT_NIL):\n                    return pmt.to_long(p_val)\n\
+      \        except: pass\n        return default_val\n\n    def handle_data(self,\
+      \ msg):\n        \"\"\" Data from Sender Block (User defined priority 0-10)\
+      \ \"\"\"\n        if not pmt.is_pair(msg): return\n        prio = self.get_priority_from_msg(msg,\
+      \ 5) # Default to mid-priority if missing\n        \n        with self.lock:\n\
+      \            self.tx_queue.append({'msg': msg, 'prio': prio})\n\n    def handle_ack(self,\
+      \ msg):\n        \"\"\" ACKs from Receiver Block (Always Priority 0) \"\"\"\n\
+      \        if not pmt.is_pair(msg): return\n        # ACKs are critical, always\
+      \ 0\n        with self.lock:\n            self.tx_queue.append({'msg': msg,\
+      \ 'prio': 0})\n\n    def run_tx_loop(self):\n        while not self.stop_thread:\n\
+      \            current_time = time.time()\n            msg_to_send = None\n  \
+      \          \n            # === 1. AGING LOGIC (Timer Based) ===\n          \
+      \  if (current_time - self.last_aging_time) > self.aging_interval:\n       \
+      \         with self.lock:\n                    if len(self.tx_queue) > 0:\n\
+      \                        # Decrement priority of EVERY packet currently waiting\n\
+      \                        # (Lower number = Higher Priority)\n              \
+      \          for item in self.tx_queue:\n                            # ACKs (Prio\
+      \ 0) stay at 0 or go negative, which is fine\n                            item['prio']\
+      \ -= 1\n                \n                self.last_aging_time = current_time\n\
+      \n            # === 2. SENDING LOGIC ===\n            with self.lock:\n    \
+      \            if len(self.tx_queue) > 0:\n                    # Sort: Ascending\
+      \ order (Lowest number = Highest Priority)\n                    # Python's sort\
+      \ is stable (preserves FIFO for ties)\n                    self.tx_queue.sort(key=lambda\
+      \ x: x['prio'])\n                    \n                    # Pop the most important\
+      \ message\n                    item = self.tx_queue.pop(0)\n               \
+      \     msg_to_send = item['msg']\n            \n            # === 3. HARDWARE\
+      \ OUTPUT ===\n            if msg_to_send:\n                self.message_port_pub(pmt.intern('pdu_out'),\
+      \ msg_to_send)\n                # Small gap to prevent hardware buffer overrun\n\
+      \                time.sleep(0.005) \n            else:\n                # Sleep\
+      \ if idle to save CPU\n                time.sleep(0.002)\n"
+    affinity: ''
+    aging_interval_ms: '10000'
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+  states:
+    _io_cache: '(''MAC Arbiter (Timer Aging)'', ''blk'', [(''aging_interval_ms'',
+      ''200'')], [(''ack_in'', ''message'', 1), (''data_in'', ''message'', 1)], [(''pdu_out'',
+      ''message'', 1)], ''\n        Args:\n            aging_interval_ms: How often
+      (in ms) to boost the priority of waiting packets.\n                               Default
+      200ms means a packet drops from Priority 5 -> 4 after 0.2s.\n        '', [])'
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [600, 688.0]
+    rotation: 0
+    state: enabled
+- name: epy_block_5_0
+  id: epy_block
+  parameters:
+    _source_code: "\"\"\"\nEmbedded Python Block: MAC Priority Arbiter (Timer-Based\
+      \ Aging)\n\"\"\"\nimport numpy as np\nfrom gnuradio import gr\nimport pmt\n\
+      import threading\nimport time\n\nclass blk(gr.basic_block):\n    def __init__(self,\
+      \ aging_interval_ms=200):\n        \"\"\"\n        Args:\n            aging_interval_ms:\
+      \ How often (in ms) to boost the priority of waiting packets.\n            \
+      \                   Default 200ms means a packet drops from Priority 5 -> 4\
+      \ after 0.2s.\n        \"\"\"\n        gr.basic_block.__init__(self, name='MAC\
+      \ Arbiter (Timer Aging)', in_sig=None, out_sig=None)\n\n        self.aging_interval\
+      \ = aging_interval_ms / 1000.0\n        self.last_aging_time = time.time()\n\
+      \n        # Unified Queue. Stores dictionaries: {'msg': pmt_msg, 'prio': int}\n\
+      \        self.tx_queue = []\n\n        self.lock = threading.Lock()\n      \
+      \  self.stop_thread = False\n\n        self.message_port_register_in(pmt.intern('data_in'))\n\
+      \        self.message_port_register_in(pmt.intern('ack_in'))\n        self.message_port_register_out(pmt.intern('pdu_out'))\n\
+      \n        self.set_msg_handler(pmt.intern('data_in'), self.handle_data)\n  \
+      \      self.set_msg_handler(pmt.intern('ack_in'), self.handle_ack)\n\n     \
+      \   self.tx_thread = threading.Thread(target=self.run_tx_loop)\n        self.tx_thread.daemon\
+      \ = True\n        self.tx_thread.start()\n\n    def __del__(self):\n       \
+      \ self.stop_thread = True\n        if self.tx_thread.is_alive(): self.tx_thread.join()\n\
+      \n    def get_priority_from_msg(self, msg, default_val):\n        \"\"\" Extract\
+      \ 'priority' field from PMT Metadata \"\"\"\n        try:\n            meta\
+      \ = pmt.car(msg)\n            if pmt.is_dict(meta):\n                p_val =\
+      \ pmt.dict_ref(meta, pmt.intern(\"priority\"), pmt.PMT_NIL)\n              \
+      \  if not pmt.eq(p_val, pmt.PMT_NIL):\n                    return pmt.to_long(p_val)\n\
+      \        except: pass\n        return default_val\n\n    def handle_data(self,\
+      \ msg):\n        \"\"\" Data from Sender Block (User defined priority 0-10)\
+      \ \"\"\"\n        if not pmt.is_pair(msg): return\n        prio = self.get_priority_from_msg(msg,\
+      \ 5) # Default to mid-priority if missing\n        \n        with self.lock:\n\
+      \            self.tx_queue.append({'msg': msg, 'prio': prio})\n\n    def handle_ack(self,\
+      \ msg):\n        \"\"\" ACKs from Receiver Block (Always Priority 0) \"\"\"\n\
+      \        if not pmt.is_pair(msg): return\n        # ACKs are critical, always\
+      \ 0\n        with self.lock:\n            self.tx_queue.append({'msg': msg,\
+      \ 'prio': 0})\n\n    def run_tx_loop(self):\n        while not self.stop_thread:\n\
+      \            current_time = time.time()\n            msg_to_send = None\n  \
+      \          \n            # === 1. AGING LOGIC (Timer Based) ===\n          \
+      \  if (current_time - self.last_aging_time) > self.aging_interval:\n       \
+      \         with self.lock:\n                    if len(self.tx_queue) > 0:\n\
+      \                        # Decrement priority of EVERY packet currently waiting\n\
+      \                        # (Lower number = Higher Priority)\n              \
+      \          for item in self.tx_queue:\n                            # ACKs (Prio\
+      \ 0) stay at 0 or go negative, which is fine\n                            item['prio']\
+      \ -= 1\n                \n                self.last_aging_time = current_time\n\
+      \n            # === 2. SENDING LOGIC ===\n            with self.lock:\n    \
+      \            if len(self.tx_queue) > 0:\n                    # Sort: Ascending\
+      \ order (Lowest number = Highest Priority)\n                    # Python's sort\
+      \ is stable (preserves FIFO for ties)\n                    self.tx_queue.sort(key=lambda\
+      \ x: x['prio'])\n                    \n                    # Pop the most important\
+      \ message\n                    item = self.tx_queue.pop(0)\n               \
+      \     msg_to_send = item['msg']\n            \n            # === 3. HARDWARE\
+      \ OUTPUT ===\n            if msg_to_send:\n                self.message_port_pub(pmt.intern('pdu_out'),\
+      \ msg_to_send)\n                # Small gap to prevent hardware buffer overrun\n\
+      \                time.sleep(0.005) \n            else:\n                # Sleep\
+      \ if idle to save CPU\n                time.sleep(0.002)\n"
+    affinity: ''
+    aging_interval_ms: '10000'
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+  states:
+    _io_cache: '(''MAC Arbiter (Timer Aging)'', ''blk'', [(''aging_interval_ms'',
+      ''200'')], [(''ack_in'', ''message'', 1), (''data_in'', ''message'', 1)], [(''pdu_out'',
+      ''message'', 1)], ''\n        Args:\n            aging_interval_ms: How often
+      (in ms) to boost the priority of waiting packets.\n                               Default
+      200ms means a packet drops from Priority 5 -> 4 after 0.2s.\n        '', [])'
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [912, 1600.0]
+    rotation: 0
+    state: enabled
+- name: pdu_pdu_to_tagged_stream_0
+  id: pdu_pdu_to_tagged_stream
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    tag: packet_len
+    type: byte
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1344, 680.0]
+    rotation: 0
+    state: enabled
+- name: pdu_pdu_to_tagged_stream_0_0
+  id: pdu_pdu_to_tagged_stream
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    tag: packet_len
+    type: byte
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1680, 1592.0]
+    rotation: 0
+    state: enabled
+- name: pdu_pdu_to_tagged_stream_1
+  id: pdu_pdu_to_tagged_stream
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    tag: packet_len
+    type: byte
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1344, 744.0]
+    rotation: 0
+    state: enabled
+- name: pdu_pdu_to_tagged_stream_1_0
+  id: pdu_pdu_to_tagged_stream
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    tag: packet_len
+    type: byte
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1680, 1672.0]
+    rotation: 0
+    state: enabled
+- name: pdu_pdu_to_tagged_stream_2
+  id: pdu_pdu_to_tagged_stream
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    tag: packet_len
+    type: byte
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [2376, 712.0]
+    rotation: 0
+    state: enabled
+- name: pdu_pdu_to_tagged_stream_2_0
+  id: pdu_pdu_to_tagged_stream
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    tag: packet_len
+    type: byte
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [2712, 1640.0]
+    rotation: 0
+    state: enabled
+- name: pdu_tagged_stream_to_pdu_0
+  id: pdu_tagged_stream_to_pdu
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    tag: packet_len
+    type: byte
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1832, 712.0]
+    rotation: 0
+    state: enabled
+- name: pdu_tagged_stream_to_pdu_0_0
+  id: pdu_tagged_stream_to_pdu
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    tag: packet_len
+    type: byte
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [2384, 1128.0]
+    rotation: 0
+    state: true
+- name: pdu_tagged_stream_to_pdu_0_0_0
+  id: pdu_tagged_stream_to_pdu
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    tag: packet_len
+    type: byte
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [2336, 264.0]
+    rotation: 0
+    state: true
+- name: pdu_tagged_stream_to_pdu_0_1
+  id: pdu_tagged_stream_to_pdu
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    tag: packet_len
+    type: byte
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [2168, 1640.0]
+    rotation: 0
+    state: enabled
+- name: qtgui_const_sink_x_1
+  id: qtgui_const_sink_x
+  parameters:
+    affinity: ''
+    alias: ''
+    alpha1: '1.0'
+    alpha10: '1.0'
+    alpha2: '1.0'
+    alpha3: '1.0'
+    alpha4: '1.0'
+    alpha5: '1.0'
+    alpha6: '1.0'
+    alpha7: '1.0'
+    alpha8: '1.0'
+    alpha9: '1.0'
+    autoscale: 'False'
+    axislabels: 'True'
+    color1: '"blue"'
+    color10: '"dark blue"'
+    color2: '"red"'
+    color3: '"green"'
+    color4: '"black"'
+    color5: '"cyan"'
+    color6: '"magenta"'
+    color7: '"yellow"'
+    color8: '"dark red"'
+    color9: '"dark green"'
+    comment: ''
+    grid: 'False'
+    gui_hint: ''
+    label1: ''
+    label10: ''
+    label2: ''
+    label3: ''
+    label4: ''
+    label5: ''
+    label6: ''
+    label7: ''
+    label8: ''
+    label9: ''
+    legend: 'True'
+    marker1: '0'
+    marker10: '0'
+    marker2: '0'
+    marker3: '0'
+    marker4: '0'
+    marker5: '0'
+    marker6: '0'
+    marker7: '0'
+    marker8: '0'
+    marker9: '0'
+    name: '""'
+    nconnections: '1'
+    size: '1024'
+    style1: '0'
+    style10: '0'
+    style2: '0'
+    style3: '0'
+    style4: '0'
+    style5: '0'
+    style6: '0'
+    style7: '0'
+    style8: '0'
+    style9: '0'
+    tr_chan: '0'
+    tr_level: '0.0'
+    tr_mode: qtgui.TRIG_MODE_FREE
+    tr_slope: qtgui.TRIG_SLOPE_POS
+    tr_tag: '""'
+    type: complex
+    update_time: '0.10'
+    width1: '1'
+    width10: '1'
+    width2: '1'
+    width3: '1'
+    width4: '1'
+    width5: '1'
+    width6: '1'
+    width7: '1'
+    width8: '1'
+    width9: '1'
+    xmax: '2'
+    xmin: '-2'
+    ymax: '2'
+    ymin: '-2'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1304, 992.0]
+    rotation: 0
+    state: enabled
+- name: qtgui_const_sink_x_1_0
+  id: qtgui_const_sink_x
+  parameters:
+    affinity: ''
+    alias: ''
+    alpha1: '1.0'
+    alpha10: '1.0'
+    alpha2: '1.0'
+    alpha3: '1.0'
+    alpha4: '1.0'
+    alpha5: '1.0'
+    alpha6: '1.0'
+    alpha7: '1.0'
+    alpha8: '1.0'
+    alpha9: '1.0'
+    autoscale: 'False'
+    axislabels: 'True'
+    color1: '"blue"'
+    color10: '"dark blue"'
+    color2: '"red"'
+    color3: '"green"'
+    color4: '"black"'
+    color5: '"cyan"'
+    color6: '"magenta"'
+    color7: '"yellow"'
+    color8: '"dark red"'
+    color9: '"dark green"'
+    comment: ''
+    grid: 'False'
+    gui_hint: ''
+    label1: ''
+    label10: ''
+    label2: ''
+    label3: ''
+    label4: ''
+    label5: ''
+    label6: ''
+    label7: ''
+    label8: ''
+    label9: ''
+    legend: 'True'
+    marker1: '0'
+    marker10: '0'
+    marker2: '0'
+    marker3: '0'
+    marker4: '0'
+    marker5: '0'
+    marker6: '0'
+    marker7: '0'
+    marker8: '0'
+    marker9: '0'
+    name: '""'
+    nconnections: '1'
+    size: '1024'
+    style1: '0'
+    style10: '0'
+    style2: '0'
+    style3: '0'
+    style4: '0'
+    style5: '0'
+    style6: '0'
+    style7: '0'
+    style8: '0'
+    style9: '0'
+    tr_chan: '0'
+    tr_level: '0.0'
+    tr_mode: qtgui.TRIG_MODE_FREE
+    tr_slope: qtgui.TRIG_SLOPE_POS
+    tr_tag: '""'
+    type: complex
+    update_time: '0.10'
+    width1: '1'
+    width10: '1'
+    width2: '1'
+    width3: '1'
+    width4: '1'
+    width5: '1'
+    width6: '1'
+    width7: '1'
+    width8: '1'
+    width9: '1'
+    xmax: '2'
+    xmin: '-2'
+    ymax: '2'
+    ymin: '-2'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1256, 128.0]
+    rotation: 0
+    state: enabled
+- name: qtgui_time_sink_x_0
+  id: qtgui_time_sink_x
+  parameters:
+    affinity: ''
+    alias: ''
+    alpha1: '1.0'
+    alpha10: '1.0'
+    alpha2: '1.0'
+    alpha3: '1.0'
+    alpha4: '1.0'
+    alpha5: '1.0'
+    alpha6: '1.0'
+    alpha7: '1.0'
+    alpha8: '1.0'
+    alpha9: '1.0'
+    autoscale: 'False'
+    axislabels: 'True'
+    color1: blue
+    color10: dark blue
+    color2: red
+    color3: green
+    color4: black
+    color5: cyan
+    color6: magenta
+    color7: yellow
+    color8: dark red
+    color9: dark green
+    comment: ''
+    ctrlpanel: 'False'
+    entags: 'True'
+    grid: 'False'
+    gui_hint: ''
+    label1: Signal 1
+    label10: Signal 10
+    label2: Signal 2
+    label3: Signal 3
+    label4: Signal 4
+    label5: Signal 5
+    label6: Signal 6
+    label7: Signal 7
+    label8: Signal 8
+    label9: Signal 9
+    legend: 'True'
+    marker1: '-1'
+    marker10: '-1'
+    marker2: '-1'
+    marker3: '-1'
+    marker4: '-1'
+    marker5: '-1'
+    marker6: '-1'
+    marker7: '-1'
+    marker8: '-1'
+    marker9: '-1'
+    name: '"I want food"'
+    nconnections: '1'
+    size: '1024'
+    srate: samp_rate
+    stemplot: 'False'
+    style1: '1'
+    style10: '1'
+    style2: '1'
+    style3: '1'
+    style4: '1'
+    style5: '1'
+    style6: '1'
+    style7: '1'
+    style8: '1'
+    style9: '1'
+    tr_chan: '0'
+    tr_delay: '0'
+    tr_level: '0.0'
+    tr_mode: qtgui.TRIG_MODE_FREE
+    tr_slope: qtgui.TRIG_SLOPE_POS
+    tr_tag: '""'
+    type: float
+    update_time: '0.10'
+    width1: '1'
+    width10: '1'
+    width2: '1'
+    width3: '1'
+    width4: '1'
+    width5: '1'
+    width6: '1'
+    width7: '1'
+    width8: '1'
+    width9: '1'
+    ylabel: Amplitude
+    ymax: '1'
+    ymin: '-1'
+    yunit: '""'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [2208, 1328.0]
+    rotation: 0
+    state: enabled
+- name: qtgui_time_sink_x_0_0
+  id: qtgui_time_sink_x
+  parameters:
+    affinity: ''
+    alias: ''
+    alpha1: '1.0'
+    alpha10: '1.0'
+    alpha2: '1.0'
+    alpha3: '1.0'
+    alpha4: '1.0'
+    alpha5: '1.0'
+    alpha6: '1.0'
+    alpha7: '1.0'
+    alpha8: '1.0'
+    alpha9: '1.0'
+    autoscale: 'False'
+    axislabels: 'True'
+    color1: blue
+    color10: dark blue
+    color2: red
+    color3: green
+    color4: black
+    color5: cyan
+    color6: magenta
+    color7: yellow
+    color8: dark red
+    color9: dark green
+    comment: ''
+    ctrlpanel: 'False'
+    entags: 'True'
+    grid: 'False'
+    gui_hint: ''
+    label1: Signal 1
+    label10: Signal 10
+    label2: Signal 2
+    label3: Signal 3
+    label4: Signal 4
+    label5: Signal 5
+    label6: Signal 6
+    label7: Signal 7
+    label8: Signal 8
+    label9: Signal 9
+    legend: 'True'
+    marker1: '-1'
+    marker10: '-1'
+    marker2: '-1'
+    marker3: '-1'
+    marker4: '-1'
+    marker5: '-1'
+    marker6: '-1'
+    marker7: '-1'
+    marker8: '-1'
+    marker9: '-1'
+    name: '"I want food"'
+    nconnections: '1'
+    size: '1024'
+    srate: samp_rate
+    stemplot: 'False'
+    style1: '1'
+    style10: '1'
+    style2: '1'
+    style3: '1'
+    style4: '1'
+    style5: '1'
+    style6: '1'
+    style7: '1'
+    style8: '1'
+    style9: '1'
+    tr_chan: '0'
+    tr_delay: '0'
+    tr_level: '0.0'
+    tr_mode: qtgui.TRIG_MODE_FREE
+    tr_slope: qtgui.TRIG_SLOPE_POS
+    tr_tag: '""'
+    type: float
+    update_time: '0.10'
+    width1: '1'
+    width10: '1'
+    width2: '1'
+    width3: '1'
+    width4: '1'
+    width5: '1'
+    width6: '1'
+    width7: '1'
+    width8: '1'
+    width9: '1'
+    ylabel: Amplitude
+    ymax: '1'
+    ymin: '-1'
+    yunit: '""'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [2160, 464.0]
+    rotation: 0
+    state: enabled
+- name: virtual_sink_0
+  id: virtual_sink
+  parameters:
+    alias: ''
+    comment: ''
+    stream_id: Transmitter TX
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [3456, 712.0]
+    rotation: 0
+    state: enabled
+- name: virtual_sink_0_0
+  id: virtual_sink
+  parameters:
+    alias: ''
+    comment: ''
+    stream_id: Reciever TX
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [3792, 1640.0]
+    rotation: 0
+    state: enabled
+- name: virtual_sink_1
+  id: virtual_sink
+  parameters:
+    alias: ''
+    comment: ''
+    stream_id: Receiver RX
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [3072, 1112.0]
+    rotation: 0
+    state: enabled
+- name: virtual_sink_2
+  id: virtual_sink
+  parameters:
+    alias: ''
+    comment: ''
+    stream_id: Transmitter RX
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [3000, 248.0]
+    rotation: 0
+    state: enabled
+- name: virtual_source_0
+  id: virtual_source
+  parameters:
+    alias: ''
+    comment: ''
+    stream_id: Transmitter TX
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [48, 1176.0]
+    rotation: 0
+    state: enabled
+- name: virtual_source_1
+  id: virtual_source
+  parameters:
+    alias: ''
+    comment: ''
+    stream_id: Receiver RX
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [40, 1576.0]
+    rotation: 0
+    state: enabled
+- name: virtual_source_2
+  id: virtual_source
+  parameters:
+    alias: ''
+    comment: ''
+    stream_id: Reciever TX
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [40, 256.0]
+    rotation: 0
+    state: enabled
+- name: virtual_source_3
+  id: virtual_source
+  parameters:
+    alias: ''
+    comment: ''
+    stream_id: Transmitter RX
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [24, 768.0]
+    rotation: 0
+    state: enabled
+
+connections:
+- [blocks_pack_k_bits_bb_0, '0', digital_correlate_access_code_xx_ts_0, '0']
+- [blocks_pack_k_bits_bb_0_0, '0', digital_correlate_access_code_xx_ts_0_0, '0']
+- [blocks_repack_bits_bb_0, '0', blocks_throttle2_0, '0']
+- [blocks_repack_bits_bb_0_0, '0', blocks_throttle2_0_0, '0']
+- [blocks_repack_bits_bb_1_0_0, '0', pdu_tagged_stream_to_pdu_0_0, '0']
+- [blocks_repack_bits_bb_1_0_0_0, '0', pdu_tagged_stream_to_pdu_0_0_0, '0']
+- [blocks_tagged_stream_mux_0, '0', pdu_tagged_stream_to_pdu_0, '0']
+- [blocks_tagged_stream_mux_0_0, '0', pdu_tagged_stream_to_pdu_0_1, '0']
+- [blocks_throttle2_0, '0', digital_constellation_modulator_0, '0']
+- [blocks_throttle2_0_0, '0', digital_constellation_modulator_0_0, '0']
+- [blocks_uchar_to_float_0, '0', qtgui_time_sink_x_0, '0']
+- [blocks_uchar_to_float_0_0, '0', qtgui_time_sink_x_0_0, '0']
+- [blocks_unpack_k_bits_bb_0, '0', blocks_pack_k_bits_bb_0, '0']
+- [blocks_unpack_k_bits_bb_0_0, '0', blocks_pack_k_bits_bb_0_0, '0']
+- [channels_channel_model_0_1, '0', virtual_sink_0, '0']
+- [channels_channel_model_0_1_0, '0', virtual_sink_0_0, '0']
+- [digital_constellation_decoder_cb_0, '0', digital_diff_decoder_bb_0, '0']
+- [digital_constellation_decoder_cb_0_0, '0', digital_diff_decoder_bb_0_0, '0']
+- [digital_constellation_modulator_0, '0', channels_channel_model_0_1, '0']
+- [digital_constellation_modulator_0_0, '0', channels_channel_model_0_1_0, '0']
+- [digital_correlate_access_code_xx_ts_0, '0', blocks_repack_bits_bb_1_0_0, '0']
+- [digital_correlate_access_code_xx_ts_0, '0', blocks_uchar_to_float_0, '0']
+- [digital_correlate_access_code_xx_ts_0_0, '0', blocks_repack_bits_bb_1_0_0_0, '0']
+- [digital_correlate_access_code_xx_ts_0_0, '0', blocks_uchar_to_float_0_0, '0']
+- [digital_costas_loop_cc_0, '0', digital_constellation_decoder_cb_0, '0']
+- [digital_costas_loop_cc_0, '0', qtgui_const_sink_x_1, '0']
+- [digital_costas_loop_cc_0_0, '0', digital_constellation_decoder_cb_0_0, '0']
+- [digital_costas_loop_cc_0_0, '0', qtgui_const_sink_x_1_0, '0']
+- [digital_crc_append_0, out, digital_protocol_formatter_async_0, in]
+- [digital_crc_append_0_0, out, digital_protocol_formatter_async_0_0, in]
+- [digital_crc_check_0, ok, blocks_message_debug_3, print]
+- [digital_crc_check_0, ok, virtual_sink_1, '0']
+- [digital_crc_check_0_0, ok, virtual_sink_2, '0']
+- [digital_diff_decoder_bb_0, '0', digital_map_bb_0, '0']
+- [digital_diff_decoder_bb_0_0, '0', digital_map_bb_0_0, '0']
+- [digital_linear_equalizer_0_1, '0', digital_costas_loop_cc_0, '0']
+- [digital_linear_equalizer_0_1_0, '0', digital_costas_loop_cc_0_0, '0']
+- [digital_map_bb_0, '0', blocks_unpack_k_bits_bb_0, '0']
+- [digital_map_bb_0_0, '0', blocks_unpack_k_bits_bb_0_0, '0']
+- [digital_protocol_formatter_async_0, header, pdu_pdu_to_tagged_stream_0, pdus]
+- [digital_protocol_formatter_async_0, payload, pdu_pdu_to_tagged_stream_1, pdus]
+- [digital_protocol_formatter_async_0_0, header, pdu_pdu_to_tagged_stream_0_0, pdus]
+- [digital_protocol_formatter_async_0_0, payload, pdu_pdu_to_tagged_stream_1_0, pdus]
+- [digital_symbol_sync_xx_0_1, '0', digital_linear_equalizer_0_1, '0']
+- [digital_symbol_sync_xx_0_1_0, '0', digital_linear_equalizer_0_1_0, '0']
+- [epy_block_0, feedback_out, epy_block_1, feedback_in]
+- [epy_block_0, packet_out, blocks_message_debug_1, print]
+- [epy_block_0, packet_out, epy_block_5, data_in]
+- [epy_block_0_0, feedback_out, epy_block_1_0, feedback_in]
+- [epy_block_0_0, packet_out, epy_block_5_0, data_in]
+- [epy_block_1, addr_out, epy_block_0, addr_in]
+- [epy_block_1, msg_out, epy_block_0, msg_in]
+- [epy_block_1_0, addr_out, epy_block_0_0, addr_in]
+- [epy_block_1_0, msg_out, epy_block_0_0, msg_in]
+- [epy_block_2_0, pdu_out, digital_crc_check_0, in]
+- [epy_block_2_0_0, pdu_out, digital_crc_check_0_0, in]
+- [epy_block_3, pdu_out, blocks_message_debug_0, print]
+- [epy_block_3, pdu_out, pdu_pdu_to_tagged_stream_2, pdus]
+- [epy_block_3_0, pdu_out, blocks_message_debug_0_0, print]
+- [epy_block_3_0, pdu_out, pdu_pdu_to_tagged_stream_2_0, pdus]
+- [epy_block_4, ack_out, epy_block_0_0, ack_in]
+- [epy_block_4, ack_reply_out, epy_block_5_0, ack_in]
+- [epy_block_4, msg_out, epy_block_1_0, msg_in]
+- [epy_block_4_0, ack_out, epy_block_0, ack_in]
+- [epy_block_4_0, ack_reply_out, epy_block_5, ack_in]
+- [epy_block_4_0, msg_out, epy_block_1, msg_in]
+- [epy_block_5, pdu_out, digital_crc_append_0, in]
+- [epy_block_5_0, pdu_out, digital_crc_append_0_0, in]
+- [pdu_pdu_to_tagged_stream_0, '0', blocks_tagged_stream_mux_0, '0']
+- [pdu_pdu_to_tagged_stream_0_0, '0', blocks_tagged_stream_mux_0_0, '0']
+- [pdu_pdu_to_tagged_stream_1, '0', blocks_tagged_stream_mux_0, '1']
+- [pdu_pdu_to_tagged_stream_1_0, '0', blocks_tagged_stream_mux_0_0, '1']
+- [pdu_pdu_to_tagged_stream_2, '0', blocks_repack_bits_bb_0, '0']
+- [pdu_pdu_to_tagged_stream_2_0, '0', blocks_repack_bits_bb_0_0, '0']
+- [pdu_tagged_stream_to_pdu_0, pdus, blocks_message_debug_2, print]
+- [pdu_tagged_stream_to_pdu_0, pdus, epy_block_3, pdu_in]
+- [pdu_tagged_stream_to_pdu_0_0, pdus, epy_block_2_0, pdu_in]
+- [pdu_tagged_stream_to_pdu_0_0_0, pdus, epy_block_2_0_0, pdu_in]
+- [pdu_tagged_stream_to_pdu_0_1, pdus, blocks_message_debug_2_0, print]
+- [pdu_tagged_stream_to_pdu_0_1, pdus, epy_block_3_0, pdu_in]
+- [virtual_source_0, '0', digital_symbol_sync_xx_0_1, '0']
+- [virtual_source_1, '0', epy_block_4, pdu_in]
+- [virtual_source_2, '0', digital_symbol_sync_xx_0_1_0, '0']
+- [virtual_source_3, '0', epy_block_4_0, pdu_in]
+
+metadata:
+  file_format: 1
+  grc_version: 3.10.12.0
