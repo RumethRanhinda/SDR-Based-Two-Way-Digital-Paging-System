@@ -1,1 +1,1 @@
-# SDR-Based-Digital-Paging-System
+# SDR-Based-Two-Way-Digital-Paging-System
