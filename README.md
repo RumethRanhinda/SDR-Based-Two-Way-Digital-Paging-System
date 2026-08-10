@@ -1,38 +1,69 @@
 # SDR-Based Two-Way Digital Paging System
 
 ## Overview
-This repository contains the implementation of a two-way digital communication system using Software-Defined Radio (SDR). Built with GNU Radio and Nuand bladeRF hardware, the project implements reliable digital packet transmission protocols, including Stop-and-Wait ARQ and Pure ALOHA. The system is designed for two-computer communication simulations, featuring custom Python blocks for robust message queuing and half-duplex channel management.
+This repository contains the implementation of a robust two-way digital communication system using Software-Defined Radio (SDR). Built with GNU Radio and Nuand bladeRF hardware, the project features a complete custom protocol stack for reliable text messaging between nodes. 
+
+Designed for two-computer communication, the system integrates a graphical Pager GUI, utilizes custom Python blocks for robust message queuing, and implements intelligent half-duplex channel management to prevent collisions over the air.
+
+---
 
 ## System Architecture
-The system architecture separates the transmission and reception paths to allow for independent node operation across two physical computers.
-- **Transmitter (Tx) Node:** Handles message queuing, sequence numbering, and modulation.
-- **Receiver (Rx) Node:** Demodulates incoming signals, verifies sequence numbers, and triggers acknowledgment signals (ACKs).
+The system architecture separates the transmission, reception, and user interface paths to allow for independent, asynchronous node operation.
+
+* **EchoWave Pager GUI:** A user-friendly graphical interface that handles message input, chat history, and visual delivery status (Pending/ACKed/Failed).
+* **Transmitter (Tx) Path:** Manages message queuing, fragmentation, sequence numbering, PDU construction (including dummy byte prepending for pipeline flushing), and signal modulation.
+* **Receiver (Rx) Path:** Demodulates incoming RF signals, verifies sequence numbers, drops duplicate packets, pushes data to the GUI, and triggers Priority-0 acknowledgment signals (ACKs).
+
+---
 
 ## Features & Protocols
-- **Stop-and-Wait ARQ:** Ensures reliable packet delivery by requiring an acknowledgment before sending the next packet. Incorporates a timeout and retransmission mechanism.
-- **Pure ALOHA:** Implements basic channel access logic for uncoordinated transmission.
-- **Half-Duplex Channel Management:** Custom Python blocks utilize pause logic to prevent collisions and manage the switch between Tx and Rx modes.
-- **Manual Gain Control:** Configured to prevent signal clipping and maintain optimal SNR during transmission.
+* **Stop-and-Wait ARQ:** Ensures reliable packet delivery. The sender pauses after transmission and waits for an ACK. Includes dynamic timeouts and automatic retransmission limits.
+* **Pure ALOHA:** Implements basic channel access logic for uncoordinated multi-node transmission.
+* **Half-Duplex Channel Management:** Custom MAC-layer logic senses the channel. If a node detects incoming data while trying to transmit, it pauses its ARQ loop, yields the channel, and resumes once clear.
+* **Manual Gain Control:** Strictly configured to prevent signal clipping, avoid SDR "deafness," and maintain optimal SNR during burst transmissions.
 
-## Flowgraph Descriptions (.grc Files)
-The repository is structured around separate flowgraphs for testing different MAC protocols and nodes. 
+---
 
-- **`[arq_tx_name].grc`**: The transmitter flowgraph for the Stop-and-Wait ARQ protocol. It handles queueing messages, appending sequence numbers, and pausing channel access until an ACK is received or a timeout occurs.
-- **`[arq_rx_name].grc`**: The receiver flowgraph for ARQ. It demodulates the signal, verifies sequence numbers, filters out duplicate packets, and triggers the ACK response.
-- **`[aloha_tx_name].grc`**: The transmitter flowgraph for the Pure ALOHA implementation, demonstrating uncoordinated channel access without acknowledgment requirements.
-- **`[aloha_rx_name].grc`**: The receiver flowgraph for the Pure ALOHA system.
+## Flowgraph Descriptions
+The repository is structured around separate `.grc` flowgraphs for testing different MAC protocols and nodes. 
+
+| Flowgraph File | Description |
+| :--- | :--- |
+| `[arq_tx_name].grc` | Tx flowgraph for Stop-and-Wait ARQ. Queues messages, handles sequencing, and waits for ACKs. |
+| `[arq_rx_name].grc` | Rx flowgraph for ARQ. Demodulates, filters duplicates, and automatically transmits ACKs. |
+| `[aloha_tx_name].grc` | Tx flowgraph for Pure ALOHA, demonstrating uncoordinated channel access without ACKs. |
+| `[aloha_rx_name].grc` | Rx flowgraph for the Pure ALOHA system. |
 
 ---
 
 ## Hardware & Software Requirements
-- **Hardware:** Nuand bladeRF (xA4 and xA9 models)
-- **Software:** 
-  - GNU Radio
-  - Python 3.x
-  - bladeRF drivers and utilities
- 
-### Recommended Environment
-It is highly recommended to run this system on **Ubuntu**. GNU Radio and SDR hardware drivers tend to be significantly more stable, performant, and easier to configure in a native Linux environment compared to Windows.
+
+### Hardware
+* Nuand bladeRF (xA4 or xA9 models highly recommended)
+* USB 3.0 connection
+
+### Software Stack
+* GNU Radio (v3.10+)
+* Python 3.x (with PyQt5 for the GUI)
+* SoapySDR and `libbladeRF` drivers
+
+> **Recommended Environment:** It is highly recommended to run this system on **Ubuntu**. GNU Radio and SDR hardware drivers are significantly more stable, performant, and easier to configure in a native Linux environment compared to Windows.
+
+---
+
+## Setup & Configuration
+
+### 1. Installing bladeRF Drivers (Ubuntu)
+Open your terminal and execute the following commands to install the Nuand PPA, the necessary drivers, and the GNU Radio integration packages:
+
+```bash
+sudo add-apt-repository ppa:nuand/bladerf
+sudo apt-get update
+# Install bladeRF tools and specific FPGA packages for xA4/xA9
+sudo apt-get install bladerf libbladerf-dev bladerf-fpga-hostedxa4 bladerf-fpga-hostedxa9
+# Install osmoSDR/Soapy to link the bladeRF with GNU Radio
+sudo apt-get install gr-osmosdr
+```
 
 ---
 
