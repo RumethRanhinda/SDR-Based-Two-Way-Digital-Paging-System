@@ -6,7 +6,23 @@ This repository contains the implementation of a two-way digital communication s
 ## System Architecture
 The system architecture separates the transmission and reception paths to allow for independent node operation across two physical computers.
 - **Transmitter (Tx) Node:** Handles message queuing, sequence numbering, and modulation.
-- **Receiver (Rx) Node:** Demodulates incoming signals, verifies sequence numbers, and triggers acknowledgment signals (ACKs). 
+- **Receiver (Rx) Node:** Demodulates incoming signals, verifies sequence numbers, and triggers acknowledgment signals (ACKs).
+
+## Features & Protocols
+- **Stop-and-Wait ARQ:** Ensures reliable packet delivery by requiring an acknowledgment before sending the next packet. Incorporates a timeout and retransmission mechanism.
+- **Pure ALOHA:** Implements basic channel access logic for uncoordinated transmission.
+- **Half-Duplex Channel Management:** Custom Python blocks utilize pause logic to prevent collisions and manage the switch between Tx and Rx modes.
+- **Manual Gain Control:** Configured to prevent signal clipping and maintain optimal SNR during transmission.
+
+## Flowgraph Descriptions (.grc Files)
+The repository is structured around separate flowgraphs for testing different MAC protocols and nodes. 
+
+- **`[arq_tx_name].grc`**: The transmitter flowgraph for the Stop-and-Wait ARQ protocol. It handles queueing messages, appending sequence numbers, and pausing channel access until an ACK is received or a timeout occurs.
+- **`[arq_rx_name].grc`**: The receiver flowgraph for ARQ. It demodulates the signal, verifies sequence numbers, filters out duplicate packets, and triggers the ACK response.
+- **`[aloha_tx_name].grc`**: The transmitter flowgraph for the Pure ALOHA implementation, demonstrating uncoordinated channel access without acknowledgment requirements.
+- **`[aloha_rx_name].grc`**: The receiver flowgraph for the Pure ALOHA system.
+
+---
 
 ## Hardware & Software Requirements
 - **Hardware:** Nuand bladeRF (xA4 and xA9 models)
@@ -18,13 +34,7 @@ The system architecture separates the transmission and reception paths to allow 
 ### Recommended Environment
 It is highly recommended to run this system on **Ubuntu**. GNU Radio and SDR hardware drivers tend to be significantly more stable, performant, and easier to configure in a native Linux environment compared to Windows.
 
-## Flowgraph Descriptions (.grc Files)
-The repository is structured around separate flowgraphs for testing different MAC protocols and nodes. 
-
-- **`[arq_tx_name].grc`**: The transmitter flowgraph for the Stop-and-Wait ARQ protocol. It handles queueing messages, appending sequence numbers, and pausing channel access until an ACK is received or a timeout occurs.
-- **`[arq_rx_name].grc`**: The receiver flowgraph for ARQ. It demodulates the signal, verifies sequence numbers, filters out duplicate packets, and triggers the ACK response.
-- **`[aloha_tx_name].grc`**: The transmitter flowgraph for the Pure ALOHA implementation, demonstrating uncoordinated channel access without acknowledgment requirements.
-- **`[aloha_rx_name].grc`**: The receiver flowgraph for the Pure ALOHA system.
+---
 
 ## Setup & Configuration
 
@@ -40,28 +50,22 @@ sudo apt-get install bladerf libbladerf-dev bladerf-fpga-hostedxa4 bladerf-fpga-
 sudo apt-get install gr-osmosdr
 ```
 
-## Features & Protocols
-- **Stop-and-Wait ARQ:** Ensures reliable packet delivery by requiring an acknowledgment before sending the next packet. Incorporates a timeout and retransmission mechanism.
-- **Pure ALOHA:** Implements basic channel access logic for uncoordinated transmission.
-- **Half-Duplex Channel Management:** Custom Python blocks utilize pause logic to prevent collisions and manage the switch between Tx and Rx modes.
-- **Manual Gain Control:** Configured to prevent signal clipping and maintain optimal SNR during transmission.
-
-## Setup & Configuration
-
-### 1. Firmware & FPGA Bitstream
+### 2. Firmware & FPGA Bitstream
 To ensure compatibility with modern drivers, the bladeRF hardware must be running firmware version **2.6.0**.
 1. Flash the updated firmware to the bladeRF.
 2. Load the corresponding FPGA bitstream for your specific model (`hostedxA4.rbf` or `hostedxA9.rbf`) before executing the flowgraphs.
 
-### 2. Firmware & FPGA Bitstream
+### 3. Firmware & FPGA Bitstream
 1. To ensure compatibility with modern drivers, the bladeRF hardware must be running firmware version 2.6.0.
 2. Flash the updated firmware to the bladeRF. Load the corresponding FPGA bitstream for your specific model (`hostedxA4.rbf` or `hostedxA9.rbf`) using the `bladeRF-cli` before executing the flowgraphs.
 
-### 3. GNU Radio Configuration
+### 4. GNU Radio Configuration
 1. Clone this repository.
 2. Open the `.grc` flowgraph files in GNU Radio Companion.
 3. Verify that the sample rates match exactly between the Tx and Rx blocks.
 4. Adjust the manual gain settings depending on the physical distance between the two SDR nodes to prevent signal loss.
+
+---
 
 ## Usage
 1. Connect the bladeRF hardware to both Node A and Node B.
