@@ -67,9 +67,20 @@ To ensure compatibility with modern drivers, the bladeRF hardware must be runnin
 
 ---
 
+
 ## Usage
 1. Connect the bladeRF hardware to both Node A and Node B.
 2. Load the correct FPGA bitstreams on both machines.
 3. Run the receiver flowgraph on Node B.
 4. Run the transmitter flowgraph on Node A.
 5. Monitor the console output for sequence numbers, ACKs, and retransmission events.
+
+## Authors & Acknowledgments
+
+![Design_team](Images/Design_team.jpg)
+
+* **Team EchoWave** (Department of Electronic & Telecommunication Engineering, University of Moratuwa): *(From Left to Right)*  
+  * Samarasinghe S.M.R.R. - 230566U
+  * Eranga W.A.O. - 230175U
+  * Gamage S.K. - 230195F
+  * Tharushika G.K.E. - 230636K
