@@ -7,11 +7,11 @@ Designed for two-computer communication, the system integrates a graphical Pager
 
 ---
 
-## 🚀 Key Features
+## Key Features
 
 * **Custom MAC & Priority Arbiter:** Prioritizes control packets (ACKs) over data packets using Fair Queuing and dynamic aging to prevent starvation.
 * **Half-Duplex "Carrier Sense":** Intelligent Rx/Tx switching. If a node detects incoming data while attempting to transmit, it pauses its ARQ loop, yields the channel, and resumes seamlessly once the channel is clear.
-* **Robust Error & Collision Handling:** * **Stop-and-Wait ARQ:** Reliable transmission with automatic timeouts.
+* **Robust Error & Collision Handling:** **Stop-and-Wait ARQ:** Reliable transmission with automatic timeouts.
   * **Binary Exponential Backoff:** Recovers gracefully from multi-node collisions.
   * **CRC-32 Error Detection:** Automatically rejects corrupted packets at the receiver.
 * **Hardware-Level Optimization:** Utilizes prepended dummy bytes to successfully flush hardware buffers and prevent PDU truncation during burst transmissions.
@@ -25,13 +25,13 @@ Designed for two-computer communication, the system integrates a graphical Pager
 
 The project follows a strict layered communication architecture, separating the application logic from the GNU Radio signal processing flowgraph using Python Embedded Blocks.
 
-| OSI Layer | Implementation Details |
+| TCP/IP Layer | Implementation Details |
 | :--- | :--- |
 | **Application Layer** | EchoWave PyQt GUI, Real-time chat interface, Message history, Delivery status. |
 | **Transport Layer** | Automatic fragmentation/reassembly of long messages, Sequence numbering, ACK parsing. |
 | **Network Layer** | Node addressing (1-byte Hex), Target destination filtering. |
-| **Data Link (MAC) Layer** | Custom MAC Arbiter, Half-Duplex Pause/Resume logic, Pure ALOHA access, Binary Exponential Backoff, CRC-32 validation. |
-| **Physical Layer (PHY)** | Preamble insertion, QPSK Modulation/Demodulation, Hardware buffer flushing, Manual gain control. |
+| **Data Link Layer** | Custom MAC Arbiter, Half-Duplex Pause/Resume logic, Pure ALOHA access, Binary Exponential Backoff, CRC-32 validation. |
+| **Physical Layer** | Preamble insertion, QPSK Modulation/Demodulation, Hardware buffer flushing, Manual gain control. |
 
 ---
 
@@ -40,7 +40,8 @@ The project follows a strict layered communication architecture, separating the 
 The system allows multiple SDR nodes to communicate over a shared, uncoordinated wireless channel.
 
 **1. Packet Framing**
-Each transmitted packet is framed with a custom header to ensure routing and integrity:
+* Each transmitted packet is framed with a custom header to ensure routing and integrity:
+
 `[ Dest Address | Src Address | ACK Flag | Sequence Num | FIN Flag | Payload Length | Payload Data | CRC-32 ]`
 
 **2. The ARQ Lifecycle**
@@ -109,22 +110,16 @@ sudo apt-get install gr-osmosdr
 ```
 
 ### 2. Firmware & FPGA Bitstream
-To ensure compatibility with modern drivers, the bladeRF hardware must be running firmware version **2.6.0**.
-1. Flash the updated firmware to the bladeRF.
-2. Load the corresponding FPGA bitstream for your specific model (`hostedxA4.rbf` or `hostedxA9.rbf`) before executing the flowgraphs.
-
-### 3. Firmware & FPGA Bitstream
 1. To ensure compatibility with modern drivers, the bladeRF hardware must be running firmware version 2.6.0.
 2. Flash the updated firmware to the bladeRF. Load the corresponding FPGA bitstream for your specific model (`hostedxA4.rbf` or `hostedxA9.rbf`) using the `bladeRF-cli` before executing the flowgraphs.
 
-### 4. GNU Radio Configuration
+### 3. GNU Radio Configuration
 1. Clone this repository.
 2. Open the `.grc` flowgraph files in GNU Radio Companion.
 3. Verify that the sample rates match exactly between the Tx and Rx blocks.
 4. Adjust the manual gain settings depending on the physical distance between the two SDR nodes to prevent signal loss.
 
 ---
-
 
 ## Usage
 1. Connect the bladeRF hardware to both Node A and Node B.
