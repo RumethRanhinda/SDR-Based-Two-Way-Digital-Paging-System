@@ -56,16 +56,14 @@ The system allows multiple SDR nodes to communicate over a shared, uncoordinated
 ---
 
 ## Flowgraph Descriptions
-The repository is structured around separate `.grc` flowgraphs for testing different MAC protocols and nodes. 
+The repository contains both stable deployment implementations and experimental simulation drafts used during development.
 
-| Flowgraph File | Description |
-| :--- | :--- |
-| `SDR Implementation/device_node.grc` | Tx flowgraph for Stop-and-Wait ARQ. Queues messages, handles sequencing, and waits for ACKs. |
-| `Simulation/Single device loopback/loopback.grc` | Rx flowgraph for ARQ. Demodulates, filters duplicates, and automatically transmits ACKs. |
-| `Simulation/drafts/Multiuser/Multiuser.grc` | Tx flowgraph for Pure ALOHA, demonstrating uncoordinated channel access without ACKs. |
-| `Simulation/drafts/Priority Handler/Priority_handler.grc` | Rx flowgraph for the Pure ALOHA system. |
-
----
+| Flowgraph File | Status | Description |
+| :--- | :--- | :--- |
+| `SDR Implementation/device_node.grc` | **Stable** | The primary flowgraph for a physical SDR node. Integrates the full protocol stack, half-duplex switching, and EchoWave GUI for use with bladeRF hardware. |
+| `Simulation/Single device loopback/loopback.grc` | **Stable** | A complete system simulation. Used for testing the Tx/Rx logic, ARQ loops, and the GUI in a safe loopback environment without requiring RF hardware. |
+| `Simulation/drafts/Multiuser/Multiuser.grc` | *Draft* | Experimental simulation flowgraph testing uncoordinated channel access, multi-node collisions, and ZeroMQ (ZMQ) network routing. |
+| `Simulation/drafts/Priority Handler/Priority_handler.grc` | *Draft* | Experimental workspace dedicated to isolating and testing the MAC Arbiter, priority queuing (ACK vs. Data), and dynamic aging logic. |
 
 ## Hardware & Software Requirements
 
