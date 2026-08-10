@@ -7,20 +7,47 @@ Designed for two-computer communication, the system integrates a graphical Pager
 
 ---
 
-## System Architecture
-The system architecture separates the transmission, reception, and user interface paths to allow for independent, asynchronous node operation.
+## 🚀 Key Features
 
-* **EchoWave Pager GUI:** A user-friendly graphical interface that handles message input, chat history, and visual delivery status (Pending/ACKed/Failed).
-* **Transmitter (Tx) Path:** Manages message queuing, fragmentation, sequence numbering, PDU construction (including dummy byte prepending for pipeline flushing), and signal modulation.
-* **Receiver (Rx) Path:** Demodulates incoming RF signals, verifies sequence numbers, drops duplicate packets, pushes data to the GUI, and triggers Priority-0 acknowledgment signals (ACKs).
+* **Custom MAC & Priority Arbiter:** Prioritizes control packets (ACKs) over data packets using Fair Queuing and dynamic aging to prevent starvation.
+* **Half-Duplex "Carrier Sense":** Intelligent Rx/Tx switching. If a node detects incoming data while attempting to transmit, it pauses its ARQ loop, yields the channel, and resumes seamlessly once the channel is clear.
+* **Robust Error & Collision Handling:** * **Stop-and-Wait ARQ:** Reliable transmission with automatic timeouts.
+  * **Binary Exponential Backoff:** Recovers gracefully from multi-node collisions.
+  * **CRC-32 Error Detection:** Automatically rejects corrupted packets at the receiver.
+* **Hardware-Level Optimization:** Utilizes prepended dummy bytes to successfully flush hardware buffers and prevent PDU truncation during burst transmissions.
+* **Network Scalability:** 8-bit addressing supports up to **256 unique nodes**.
+* **Modern GUI:** A PyQt5 desktop dashboard featuring real-time chat, timestamps, and color-coded delivery status indicators (*Sending*, *Sent/ACKed*, *Failed*).
+* **Simulation Ready:** Includes ZeroMQ (ZMQ) fallback configurations to simulate the wireless channel across multiple PCs without requiring physical SDRs.
 
 ---
 
-## Features & Protocols
-* **Stop-and-Wait ARQ:** Ensures reliable packet delivery. The sender pauses after transmission and waits for an ACK. Includes dynamic timeouts and automatic retransmission limits.
-* **Pure ALOHA:** Implements basic channel access logic for uncoordinated multi-node transmission.
-* **Half-Duplex Channel Management:** Custom MAC-layer logic senses the channel. If a node detects incoming data while trying to transmit, it pauses its ARQ loop, yields the channel, and resumes once clear.
-* **Manual Gain Control:** Strictly configured to prevent signal clipping, avoid SDR "deafness," and maintain optimal SNR during burst transmissions.
+## System Architecture
+
+The project follows a strict layered communication architecture, separating the application logic from the GNU Radio signal processing flowgraph using Python Embedded Blocks.
+
+| OSI Layer | Implementation Details |
+| :--- | :--- |
+| **Application Layer** | EchoWave PyQt GUI, Real-time chat interface, Message history, Delivery status. |
+| **Transport Layer** | Automatic fragmentation/reassembly of long messages, Sequence numbering, ACK parsing. |
+| **Network Layer** | Node addressing (1-byte Hex), Target destination filtering. |
+| **Data Link (MAC) Layer** | Custom MAC Arbiter, Half-Duplex Pause/Resume logic, Pure ALOHA access, Binary Exponential Backoff, CRC-32 validation. |
+| **Physical Layer (PHY)** | Preamble insertion, QPSK Modulation/Demodulation, Hardware buffer flushing, Manual gain control. |
+
+---
+
+## Communication Protocol specifics
+
+The system allows multiple SDR nodes to communicate over a shared, uncoordinated wireless channel.
+
+**1. Packet Framing**
+Each transmitted packet is framed with a custom header to ensure routing and integrity:
+`[ Dest Address | Src Address | ACK Flag | Sequence Num | FIN Flag | Payload Length | Payload Data | CRC-32 ]`
+
+**2. The ARQ Lifecycle**
+* **Transmission:** The sender transmits a framed packet and starts a timeout clock.
+* **Acknowledgment:** The receiver catches the packet, verifies the CRC-32, drops it if it's a duplicate sequence, and immediately fires back a high-priority ACK.
+* **Retransmission:** If the sender's timeout expires before receiving the ACK, it assumes a collision. It calculates a random backoff interval (which grows exponentially with consecutive failures) and tries again, up to a defined retry limit.
+
 
 ---
 
