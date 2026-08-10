@@ -82,22 +82,6 @@ The repository is structured around separate `.grc` flowgraphs for testing diffe
 ## Setup & Configuration
 
 ### 1. Installing bladeRF Drivers (Ubuntu)
-Open your terminal and execute the following commands to install the Nuand PPA, the necessary drivers, and the GNU Radio integration packages:
-
-```bash
-sudo add-apt-repository ppa:nuand/bladerf
-sudo apt-get update
-# Install bladeRF tools and specific FPGA packages for xA4/xA9
-sudo apt-get install bladerf libbladerf-dev bladerf-fpga-hostedxa4 bladerf-fpga-hostedxa9
-# Install osmoSDR/Soapy to link the bladeRF with GNU Radio
-sudo apt-get install gr-osmosdr
-```
-
----
-
-## Setup & Configuration
-
-### 1. Installing bladeRF Drivers (Ubuntu)
 Open your terminal and execute the following commands to install the Nuand PPA, the necessary drivers, and the `gr-osmosdr` package required for GNU Radio integration:
 
 ```bash
