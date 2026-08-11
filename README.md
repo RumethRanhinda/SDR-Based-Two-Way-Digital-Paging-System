@@ -1,5 +1,7 @@
 # SDR-Based Two-Way Digital Paging System
 
+![Main Flowchart](Images/Device_node_flowchart.png)
+
 ## Overview
 This repository contains the implementation of a robust two-way digital communication system using Software-Defined Radio (SDR). Built with GNU Radio and Nuand bladeRF hardware, the project features a complete custom protocol stack for reliable text messaging between nodes. 
 
